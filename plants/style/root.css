@@ -1,0 +1,67 @@
+:root {
+  --width: 90rem; /**/
+
+  --pallete-mirage: #010201; /* Проверить азвание цвета*/
+  --pallete-orange: #e06733; /* Проверить азвание цвета*/
+  --pallete-shuttle-gray: #717171; /* Проверить азвание цвета*/
+  --pallete-gray: #499a18; /* Проверить азвание цвета*/
+  --pallete-q: #636060; /* Проверить азвание цвета*/
+  --pallete-black: #000000; /**/
+  --pallete-a: #edf2ec; /**/
+  --pallete-c: #e3e1d5; /**/
+  --pallete-f: #d9d9d9; /**/
+  --pallete-r: #d6e7d2;
+  --pallete-manatee: #929499;
+  --pallete-silver: #cccccc;
+  --pallete-mercury: #e5e5e5;
+  --pallete-white: #ffffff;
+  --pallete-deep-koamaru: #171c8f;
+  --pallete-Concrete: #f2f2f2;
+
+  --pallete-black: #000000;
+  --pallete-bombay: #aeaeb0;
+  --pallete-biloba-flower: #ba9be6;
+  --pallete-sea-pink: #e9a0a7;
+  --pallete-apricot-peach: #f8cab1;
+  --pallete-antique-brass: #c88252;
+
+  --color-social-link: var(--pallete-shuttle-gray);
+
+  --color-text-primary: var(--pallete-mirage); /**/
+  --color-text-default: var(--pallete-black); /**/
+
+  --color-text-primary-activ: var(--pallete-manatee);
+  --color-text-secondary: var(--pallete-orange); /**/
+
+  --color-text-disabled: var(--pallete-silver);
+  --color-text-heading-primary: var(--pallete-shuttle-gray); /**/
+  --color-text-heading-secondary: var(--pallete-orange); /**/
+  --color-text-heading-inner: var(--pallete-gray); /**/
+  --color-text-description: var(--pallete-q);
+  --color-text-button: var(--pallete-black);
+
+  --color-border-primary: var(--pallete-orange); /**/
+  --color-border-secondary: var(--pallete-c); /**/
+  --background-color-primary: var(--pallete-a); /**/
+
+  --accordion-background-color: var(--pallete-r);
+
+  --background-color-secondary: var(--pallete-white);
+  --background-color-header: var(--pallete-white);
+  --background-color-disabled: var(--pallete-Concrete);
+  --color-slash: var(--pallete-manatee);
+  --button-background-color-primary: var(--pallete-white);
+  --button-background-color-secondary: var(--pallete-deep-koamaru);
+  --button-text-color-primary: var(--pallete-white);
+  --button-text-color-secondary: var(--pallete-mirage);
+  --button-border-color-primary: var(--pallete-silver);
+  --button-border-color-secondary: var(--pallete-deep-koamaru);
+  --button-arrow-color-backgroud: var(--pallete-f);
+  --background-color-button-burger: var(--pallete-mirage);
+  --background-color-button-burger-active: var(--pallete-shuttle-gray);
+
+  --text-xxl: 2.8125rem; /**/
+  --text-xl: 2.5rem; /**/
+  --text-lg: 1.25rem; /**/
+  --text-heading-carousel-color: var(--pallete-deep-koamaru);
+}
