@@ -1,67 +1,77 @@
 :root {
-  --width: 90rem; /**/
+  --width: 90rem;
 
-  --pallete-mirage: #010201; /* Проверить азвание цвета*/
-  --pallete-orange: #e06733; /* Проверить азвание цвета*/
-  --pallete-shuttle-gray: #717171; /* Проверить азвание цвета*/
-  --pallete-gray: #499a18; /* Проверить азвание цвета*/
-  --pallete-q: #636060; /* Проверить азвание цвета*/
-  --pallete-black: #000000; /**/
-  --pallete-a: #edf2ec; /**/
-  --pallete-c: #e3e1d5; /**/
-  --pallete-f: #d9d9d9; /**/
-  --pallete-r: #d6e7d2;
-  --pallete-manatee: #929499;
-  --pallete-silver: #cccccc;
-  --pallete-mercury: #e5e5e5;
-  --pallete-white: #ffffff;
-  --pallete-deep-koamaru: #171c8f;
-  --pallete-Concrete: #f2f2f2;
-
+  --pallete-marshland: #010201;
+  --pallete-altolame-pea: #e06733;
+  --pallete-dove-gray: #717171;
+  --pallete-vida-loca: #499a18;
+  --pallete-scorpion: #636060;
   --pallete-black: #000000;
-  --pallete-bombay: #aeaeb0;
-  --pallete-biloba-flower: #ba9be6;
-  --pallete-sea-pink: #e9a0a7;
-  --pallete-apricot-peach: #f8cab1;
-  --pallete-antique-brass: #c88252;
+  --pallete-gray-nurse: #edf2ec;
+  --pallete-moon-color: #e3e1d5;
+  --pallete-alto: #d9d9d9;
+  --pallete-willow-brook: #d6e7d2;
+  --pallete-white: #ffffff;
+  --pallete-yellow-green: #c1e698;
+  --pallete-martini: #aea1a1;
+  --pallete-sage: #8ba07e;
+  --pallete-a: #dce9d9; /**/
 
-  --color-social-link: var(--pallete-shuttle-gray);
+  --text-color-default: var(--pallete-black);
+  --text-color-primary: var(--pallete-marshland);
+  --text-color-primary-active: var(--pallete-white);
+  --text-color-primary-hover: var(--pallete-vida-loca);
+  --text-color-secondary: var(--pallete-altolame-pea);
+  --text-color-heading-primary: var(--pallete-dove-gray);
+  --text-color-heading-secondary: var(--pallete-altolame-pea);
+  --text-color-heading-inner: var(--pallete-vida-loca);
+  --text-color-button: var(--pallete-black);
 
-  --color-text-primary: var(--pallete-mirage); /**/
-  --color-text-default: var(--pallete-black); /**/
+  --logo-color-hover: var(--pallete-altolame-pea);
+  --logo-color-active: var(--pallete-white);
+  --logo-svg-color: var(--pallete-vida-loca);
 
-  --color-text-primary-activ: var(--pallete-manatee);
-  --color-text-secondary: var(--pallete-orange); /**/
+  --border-color-primary: var(--pallete-altolame-pea);
+  --border-color-secondary: var(--pallete-moon-color);
 
-  --color-text-disabled: var(--pallete-silver);
-  --color-text-heading-primary: var(--pallete-shuttle-gray); /**/
-  --color-text-heading-secondary: var(--pallete-orange); /**/
-  --color-text-heading-inner: var(--pallete-gray); /**/
-  --color-text-description: var(--pallete-q);
-  --color-text-button: var(--pallete-black);
-
-  --color-border-primary: var(--pallete-orange); /**/
-  --color-border-secondary: var(--pallete-c); /**/
-  --background-color-primary: var(--pallete-a); /**/
-
-  --accordion-background-color: var(--pallete-r);
-
+  --background-color-primary: var(--pallete-gray-nurse);
+  --background-color-defaul: var(var(--pallete-white));
   --background-color-secondary: var(--pallete-white);
   --background-color-header: var(--pallete-white);
-  --background-color-disabled: var(--pallete-Concrete);
-  --color-slash: var(--pallete-manatee);
-  --button-background-color-primary: var(--pallete-white);
-  --button-background-color-secondary: var(--pallete-deep-koamaru);
-  --button-text-color-primary: var(--pallete-white);
-  --button-text-color-secondary: var(--pallete-mirage);
-  --button-border-color-primary: var(--pallete-silver);
-  --button-border-color-secondary: var(--pallete-deep-koamaru);
-  --button-arrow-color-backgroud: var(--pallete-f);
-  --background-color-button-burger: var(--pallete-mirage);
-  --background-color-button-burger-active: var(--pallete-shuttle-gray);
+  --background-color-disabled: var(--pallete-moon-coloroncrete);
 
-  --text-xxl: 2.8125rem; /**/
-  --text-xl: 2.5rem; /**/
-  --text-lg: 1.25rem; /**/
-  --text-heading-carousel-color: var(--pallete-deep-koamaru);
+  --accordion-background-color: var(--pallete-willow-brook);
+  --accordion-button-background-color: var(--pallete-gray-nurse);
+  --accordion-button-background-color-active: var(--pallete-willow-brook);
+  --accordion-arrow-background-color-primary: var(--pallete-alto);
+  --accordion-arrow-background-color-primary-active: var(--pallete-martini);
+  --accordion-arrow-color: var(--pallete-black);
+  --accordion-arrow-color-active: var(--pallete-white);
+  --accordion-border-color: var(--pallete-martini);
+  --accordion-border-color-active: var(--pallete-willow-brook);
+  --accordion-section-text-color: var(--pallete-dove-gray);
+
+  --price-abbr-color: var(--pallete-altolame-pea);
+  --price-value-color: var(--pallete-altolame-pea);
+  --price-description-color: var(--pallete-black);
+
+  --select-arrow-background-color-secondary: var(--pallete-martini);
+  --select-arrow-background-color-secondary-active: var(--pallete-sage);
+  --select-background-color-active: var(--pallete-yellow-green);
+  --select-border-color-active: var(--pallete-willow-brook);
+  --select-section-value-background-color: var(--pallete-a);
+  --select-section-text-color: var(--pallete-vida-loca);
+  --select-section-text-color-active: var(--pallete-dove-gray);
+  --select-section-border-color: var(--pallete-alto);
+
+  --button-background-color-active: var(--pallete-altolame-pea);
+  --button-order-background-color: var(--pallete-white);
+  --button-order-text-color: var(--pallete-dove-gray);
+
+  --box-shadow-primary: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-primary-active: 0px 4px 4px rgba(0, 0, 0, 0);
+
+  --text-xxl: 2.8125rem;
+  --text-xl: 2.5rem;
+  --text-lg: 1.25rem;
 }
