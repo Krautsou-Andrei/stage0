@@ -1,22 +1,21 @@
 :root {
   --width: 90rem;
 
-  --pallete-marshland: #010201;
-  --pallete-altolame-pea: #e06733;
-  --pallete-dove-gray: #717171;
-  --pallete-vida-loca: #499a18;
-  --pallete-scorpion: #636060;
-  --pallete-black: #000000;
-  --pallete-gray-nurse: #edf2ec;
-  --pallete-moon-color: #e3e1d5;
-  --pallete-alto: #d9d9d9;
-  --pallete-willow-brook: #d6e7d2;
-  --pallete-white: #ffffff;
-  --pallete-yellow-green: #c1e698;
-  --pallete-martini: #aea1a1;
-  --pallete-sage: #8ba07e;
-  --pallete-a: #dce9d9; /**/
-
+  --pallete-marshland: rgb(1, 2, 1);
+  --pallete-altolame-pea: rgb(24, 103, 51);
+  --pallete-dove-gray: rgb(113, 113, 113);
+  --pallete-vida-loca: rgb(73, 154, 24);
+  --pallete-scorpion: rgb(99, 96, 96);
+  --pallete-black: rgb(0, 0, 0);
+  --pallete-gray-nurse: rgb(237, 242, 236);
+  --pallete-moon-color: rgb(227, 225, 213);
+  --pallete-alto: rgb(217, 217, 217);
+  --pallete-willow-brook: rgb(214, 231, 210);
+  --pallete-white: rgb(255, 255, 255);
+  --pallete-yellow-green: rgb(193, 230, 152);
+  --pallete-martini: rgb(174, 161, 161);
+  --pallete-sage: rgb(139, 160, 126);
+  --pallete-willow-brook: rgb(220, 233, 217);
   --text-color-default: var(--pallete-black);
   --text-color-primary: var(--pallete-marshland);
   --text-color-primary-active: var(--pallete-white);
@@ -59,7 +58,7 @@
   --select-arrow-background-color-secondary-active: var(--pallete-sage);
   --select-background-color-active: var(--pallete-yellow-green);
   --select-border-color-active: var(--pallete-willow-brook);
-  --select-section-value-background-color: var(--pallete-a);
+  --select-section-value-background-color: var(--pallete-willow-brook);
   --select-section-text-color: var(--pallete-vida-loca);
   --select-section-text-color-active: var(--pallete-dove-gray);
   --select-section-border-color: var(--pallete-alto);
