@@ -478,6 +478,7 @@ body {
 .item__wrap:active,
 .item__wrap:hover,
 .item__wrap:has(.description__link:focus) {
+  /*  селектор .item__wrap:has(.description__link:focus), временно, пока нет js*/
   filter: none;
 }
 

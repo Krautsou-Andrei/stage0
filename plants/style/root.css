@@ -34,7 +34,7 @@
   --border-color-secondary: var(--pallete-moon-color);
 
   --background-color-primary: var(--pallete-gray-nurse);
-  --background-color-defaul: var(var(--pallete-white));
+  --background-color-defaul: var(--pallete-white);
   --background-color-secondary: var(--pallete-white);
   --background-color-header: var(--pallete-white);
   --background-color-disabled: var(--pallete-moon-coloroncrete);
