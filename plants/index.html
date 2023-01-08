@@ -39,7 +39,7 @@
     <div class="main__container ">
       <section class="welcome">
         <div class="welcome__image image">
-          <img class="image__welcome" src="./image/leafs.jpg" width="448.8" height="407.36" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+          <img class="image__welcome" src="./image/leafs.jpg" width="448" height="407" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
         </div>
         <div class="welcome_description description">
           <h1 class="description__heading heading--xxl welcom--description-text">We lorem grow <span>plants</span> and give you oxygen</h1>
@@ -60,7 +60,7 @@
           </p>
         </div>
         <div class="about__image image">
-          <img class="image__about" src="./image/houseplant 1.jpg" width="464" height="469" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+          <img class="image__about" src="./image/houseplant-1.jpg" width="464" height="469" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
         </div>
       </section>
       <section class="service">
@@ -171,7 +171,7 @@
       </section>
       <section class="prices">
         <fieldset class="prices__fieldset fieldset-prices" id="fieldset-prices">
-          <legend class="fieldset-prices__legend heading--xl prices--description-text" for="fieldset-prices">Prices</legend>
+          <legend class="fieldset-prices__legend heading--xl prices--description-text">Prices</legend>
           <div class="fieldset-prices__accordion accordion">
             <div class="fieldset-prices__accordion-section accordion__section accordion-section" tabindex="0"><!--Удалить tabindex, после добавления js для аккордеона-->
               <h3 class="accordion-section__heading heading--lg">
@@ -180,7 +180,7 @@
                   <span class="button__arrow"></span>
                 </button>
               </h3>
-              <div class="accordion-section__content" id="sect1" role="region" aria-legendledby="accordion1id">
+              <div class="accordion-section__content" id="sect1" role="region" aria-labelledby="accordion1id">
                 <div class="accordion-content-wrap">
                   <p class="accordion-section__text">
                     Release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -203,7 +203,7 @@
                   <span class="button__arrow"></span>
                 </button>
               </h3>
-              <div class="accordion-section__content" id="sect2" role="region" aria-legendledby="accordion2id">
+              <div class="accordion-section__content" id="sect2" role="region" aria-labelledby="accordion2id">
                 <div class="accordion-content-wrap">
                   <p class="accordion-section__text">
                     Release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -226,7 +226,7 @@
                   <span class="button__arrow"></span>
                 </button>
               </h3>
-              <div class="accordion-section__content" id="sect3" role="region" aria-legendledby="accordion3id">
+              <div class="accordion-section__content" id="sect3" role="region" aria-labelledby="accordion3id">
                 <div class="accordion-content-wrap">
                   <p class="accordion-section__text">
                     Release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -250,7 +250,7 @@
             <a class="button__text button__link prices--button-text button--prices" href="#contacts"><span>Contacts us</span></a>
           </div>
           <div class="prices-contact__image image">
-            <img class="image__prices-contact" src="./image/leafs-prices.jpg" width="152" height="174.99" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+            <img class="image__prices-contact" src="./image/leafs-prices.jpg" width="152" height="175" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
           </div>
         </div>
       </section>
@@ -261,16 +261,16 @@
         </div>
         <h2 class="contacts__heading heading--xl contacts--heading-text">Contact us</h2>
         <fieldset class="contacts__fieldset fieldset-contacts" id="fieldset-contacts">
-          <legend class="fieldset-contacts__legend visually-hidden" for="fieldset-contacts">Select sity</legend>
+          <legend class="fieldset-contacts__legend visually-hidden">Select sity</legend>
           <div class="fieldset-contacts__select select">
             <div class="fieldset-contacts__select-section select__section select-section">
               <h3 class="select-section__heading heading--lg heading--contacts-select-section" tabindex="0"><!--Удалить tabindex, после добавления js для select-->
-                <button class="select-section__button select-button  button--contacts" id="accordion1id" type="button" aria-expanded="false" aria-controls="sect1">
+                <button class="select-section__button select-button  button--contacts" id="select1id" type="button" aria-expanded="false" aria-controls="select-sect1">
                   <span class="select-button__text">City</span>
                   <span class="button__arrow"></span>
                 </button>
               </h3>
-              <ul class="select-section__list" id="sect1" aria-legendledby="accordion1id">
+              <ul class="select-section__list" id="select-sect1" aria-labelledby="select1id">
                 <li class="select-section__item">
                   <p class="select-section__text">Canandaigua, NY</p>
                 </li>
