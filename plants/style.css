@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "AvenirNextRoundedStd";
-  src: url("../fonts/AvenirNextRoundedStd-Reg.woff2") format("woff2"), url("../fonts/AvenirNextRoundedStd-Reg.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AvenirNextRoundedStd";
-  src: url("../fonts/AvenirNextRoundedStd-Med.woff2") format("woff2"), url("../fonts/AvenirNextRoundedStd-Med.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
 *,
 *::before,
 *::after {
@@ -25,6 +12,7 @@ html {
 }
 
 body {
+  font-family: "Inika", sans-serif;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -64,7 +52,7 @@ ol {
 a {
   text-decoration: none;
   background-color: transparent;
-  color: var(--color-text-primary);
+  color: var(--text-color-primary);
 }
 
 a:active,
@@ -101,6 +89,7 @@ button {
   border: 0px;
   border-radius: 0;
   color: inherit;
+  cursor: pointer;
 }
 
 input {
@@ -111,7 +100,6 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
-  /* border-color: transparent; */
 }
 
 figure {
@@ -131,9 +119,9 @@ legend {
   padding: 0;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0;
-}
+} */
 
 .visually-hidden {
   position: absolute;
@@ -148,7 +136,10 @@ legend {
   overflow: hidden;
 }
 
-/* ------------------------header--------------------------- */
+/*-------------------------base------------------------------*/
+body {
+  background-color: var(--background-color-defaul);
+}
 
 .header,
 .about,
@@ -163,64 +154,15 @@ legend {
   /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
 }
 
-.header {
-  padding-top: 2.625rem; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
-  padding-bottom: 2.625rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
-  background-color: var(--background-color-primary);
-}
-
-.container {
-  max-width: var(--width);
-  margin: 0 auto;
-}
-
-.logo {
-  font-size: 1rem;
-  line-height: 1.3125; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
-}
-
-.menu {
-  font-size: 1rem;
-  line-height: 3.125; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
-  font-weight: 400;
-}
-.menu__list {
-  display: flex;
-  gap: 2.875rem;
-}
-.menu__item {
-  max-width: 6.25rem;
-  max-height: 3.125rem;
-  overflow: hidden;
-}
-
-.link--home {
-  font-weight: 700;
-  color: var(--color-text-secondary);
-}
-
-/* -------------------------------welcome------------------------- */
-
 .about,
 .welcome,
 .prices {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: calc(42px + (224 - 42) * ((100vw - 768px) / (1440 - 768)));
+  gap: 14rem;
+  /* gap: calc(42px + (224 - 42) * ((100vw - 768px) / (1440 - 768))); */
   /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения растояния между объектами*/
-}
-
-.welcome {
-  padding-top: 3.875rem;
-  padding-bottom: 3.875rem;
-  background-color: var(--background-color-primary);
 }
 
 .welcome__image,
@@ -230,9 +172,180 @@ legend {
 .prices__fieldset,
 .prices__contact {
   flex: 1;
-  overflow: hidden;
-  min-width: 17.5rem;
+  /* overflow: hidden; */
+  width: 17.5rem;
+  max-width: 100%;
 }
+
+.description__heading span,
+.service__heading span,
+.prices__heading span {
+  color: var(--text-color-heading-inner);
+}
+.header,
+.welcome,
+.service,
+.contacts {
+  background-color: var(--background-color-primary);
+}
+
+.heading--xxl {
+  font-size: var(--text-xxl);
+  line-height: 1.11;
+  font-weight: 700;
+}
+
+.heading--xl {
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.heading--lg {
+  font-size: var(--text-lg);
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* -------------------------button------------------------------ */
+.button {
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* box-shadow: var(--box-shadow-primary); */
+  border: 2px solid var(--border-color-primary);
+  border-radius: 0.625rem;
+  transition: all 0.3s;
+}
+
+.button:active,
+.button:focus {
+  background-color: var(--button-background-color-active);
+  color: var(--text-color-primary-active);
+  /* border: 1px solid var(--button-border-color-active); */
+}
+
+.button:hover {
+  box-shadow: var(--box-shadow-primary);
+}
+.button__link {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__link span {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.button__text {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-color-button);
+}
+
+.button__text:active {
+  background-color: var(--button-background-color-active);
+  color: var(--text-color-primary-active);
+}
+
+/* ------------------------header--------------------------- */
+
+.header {
+  padding-top: 2.625rem; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
+  padding-bottom: 2.625rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+
+  background-color: var(--background-color-primary);
+}
+
+.container {
+  max-width: var(--width); /*заменить на max-width, для адаптива*/
+  margin: 0 auto;
+}
+
+.logo svg {
+  stroke: var(--logo-svg-color);
+}
+
+.logo__text {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 3.125;
+
+  color: var(--text-color-default);
+}
+
+.logo:hover svg,
+.logo:hover .logo__text {
+  stroke: var(--logo-color-hover);
+  color: var(--logo-color-hover);
+}
+
+.logo:active svg,
+.logo:active .logo__text {
+  stroke: var(--logo-color-active);
+  color: var(--logo-color-active);
+}
+
+.menu {
+  font-size: 1rem;
+  line-height: 3.125; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
+  font-weight: 400;
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.875rem;
+}
+
+.menu__item {
+  max-width: 6.25rem;
+  max-height: 3.125rem;
+  /* overflow: hidden; */
+}
+
+.link--home {
+  font-weight: 700;
+  color: var(--text-color-secondary);
+}
+
+.link-rrs:hover,
+.link:hover {
+  color: var(--text-color-primary-hover);
+}
+
+.link:active {
+  position: relative;
+  top: 2px;
+}
+
+/* -------------------------------welcome------------------------- */
+
+.welcome {
+  padding-top: 3.875rem;
+  padding-bottom: 3.875rem;
+}
+
+.welcome__image {
+  mix-blend-mode: multiply;
+}
+
 .image {
   max-width: 28rem;
   height: auto;
@@ -243,20 +356,8 @@ legend {
   margin-bottom: 2.625rem;
 }
 
-.description__heading span,
-.service__heading span,
-.prices__heading span {
-  color: var(--color-text-heading-inner);
-}
-
 .welcom--description-text {
-  color: var(--color-text-heading-primary);
-}
-
-.heading--xxl {
-  font-size: var(--text-xxl);
-  line-height: 1.11;
-  font-weight: 700;
+  color: var(--text-color-heading-primary);
 }
 
 .description__text {
@@ -268,33 +369,18 @@ legend {
   font-size: 1.25rem;
   line-height: 1.75;
   font-weight: 400;
-  color: var(--color-text-description);
+  color: var(--text-color-description);
 }
 .description__button {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-
   width: 9.875rem;
-  height: 2.75rem;
+  max-width: 100%;
 
-  border: 2px solid var(--color-border-primary);
-  border-radius: 0.625rem;
-
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  overflow: hidden;
-}
-.button__text {
-  font-size: 1rem;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: var(--color-text-button);
+.button--welcome {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
 }
 
 /* -----------------------------about----------------------- */
@@ -304,14 +390,12 @@ legend {
   padding-bottom: 5.875rem;
 }
 
-.about--description-text {
-  color: var(--color-text-heading-secondary);
+.about__image {
+  mix-blend-mode: multiply;
 }
 
-.heading--xl {
-  font-size: var(--text-xl);
-  line-height: 1.3;
-  font-weight: 400;
+.about--description-text {
+  color: var(--text-color-heading-secondary);
 }
 
 .text--about {
@@ -323,8 +407,8 @@ legend {
 .service {
   padding-top: 2.5rem;
   padding-bottom: 7.5625rem;
-  background-color: var(--background-color-primary);
 }
+
 .service__header {
   margin-bottom: 5.625rem;
 
@@ -334,49 +418,67 @@ legend {
   column-gap: 8.875rem;
   row-gap: 2.25rem;
 }
+
 .service__heading {
   max-width: 19.125rem;
   max-height: 6.5rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .service-button__list {
   display: flex;
   gap: 2.375rem;
 }
-.service-button__item {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 
+.service-button__item {
   width: 9.875rem;
-  height: 2.75rem;
 
   border-radius: 0.3125rem;
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--border-color-primary);
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+
+.button--service {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .service-button__link {
   font-size: 1.25rem;
-  line-height: 1.625;
+  line-height: 1.3;
   font-weight: 400;
 
-  color: var(--color-text-secondary);
+  color: var(--text-color-secondary);
+}
+
+.service-button__link:active {
+  color: var(--text-color-primary-active);
 }
 
 .collection__list {
   display: grid;
-
   justify-content: center;
   grid-template-columns: repeat(auto-fit, max(330px));
-
   row-gap: 3.4375rem;
-
   column-gap: 7.25rem;
 }
 
+.item:active {
+  box-shadow: var(--box-shadow-primary);
+  border-radius: 1.25rem;
+}
+
 .item__wrap {
-  overflow: hidden;
+  position: relative;
+  filter: blur(2px);
+  /* overflow: hidden; */
+}
+
+.item__wrap:active,
+.item__wrap:hover,
+.item__wrap:has(.description__link:focus) {
+  filter: none;
 }
 
 .item__image {
@@ -387,21 +489,29 @@ legend {
   padding-top: 0.625rem;
   padding-bottom: 2.25rem;
   padding-right: 0.5rem;
+
   text-align: center;
-  border: 1px solid var(--color-border-secondary);
+
+  border: 1px solid var(--border-color-secondary);
   border-radius: 0px 0px 1.25rem 1.25rem;
   border-top: none;
 }
+
 .descripton__heading {
   margin-bottom: 0.625rem;
 }
-.heading--lg {
-  font-size: var(--text-lg);
-  line-height: 1;
-  font-weight: 700;
-}
+
 .description__link {
-  color: var(--color-text-secondary);
+  color: var(--text-color-secondary);
+}
+
+.description__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* -----------------------prices-------------------------- */
@@ -413,6 +523,7 @@ legend {
 .fieldset__legend {
   margin-bottom: 3.75rem;
 }
+
 .fieldset-prices__accordion {
   padding-top: 2.125rem;
   padding-right: 2.5625rem;
@@ -426,72 +537,309 @@ legend {
   gap: 2rem;
   justify-content: center;
 }
+
 .accordion {
-  border: 1px solid var(--color-border-secondary);
+  border: 1px solid var(--border-color-secondary);
   border-radius: 1.25rem;
 }
 
 .fieldset-prices__accordion-section {
   max-width: 15.625rem;
-  min-height: 3.125rem;
-
-  border-radius: 1.25rem;
-  border: 1px solid var(--background-color-primary);
-
-  background: var(--background-color-primary);
-}
-.accordion__section {
-  display: flex;
-  align-items: center;
 }
 
-.accordion-section__hedding {
+.accordion-section__heading {
+  width: 100%;
+}
+
+.accordion-section__button {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.accordion-button {
+  position: relative;
 
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  border-radius: 1.25rem;
+  border: 1px solid var(--background-color-primary);
+  background: var(--accordion-button-background-color);
+  /* overflow: hidden; */
+  transition: all 1s ease;
+}
+
+.accordion-section:active .accordion-button,
+.accordion-section:focus .accordion-button {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  background-color: var(--accordion-button-background-color-active);
+  border-color: var(--accordion-border-color-active);
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+/*
+разкоментировать после подключения js
+.accordion-button:active,
+.accordion-button:focus {
+  
+  background-color: var(--accordion-button-background-color-active);
+  border-color: var(--accordion-border-color-active);
+  border-radius: 1.25rem 1.25rem 0 0;
+}*/
+
+.accordion-section:active .accordion-button .button__arrow,
+.accordion-section:focus .accordion-button .button__arrow {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  background-color: var(--accordion-arrow-background-color-primary-active);
+}
+
+/*
+разкоментировать после подключения js
+.accordion-button:active .button__arrow,
+.accordion-button:focus .button__arrow {
+  background-color: var(--accordion-arrow-background-color-primary-active);
+}
+*/
+
+.accordion-section:active .accordion-button .button__arrow::after,
+.accordion-section:focus .accordion-button .button__arrow::after {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  border-color: var(--accordion-arrow-color-active);
+  transform: translate(-20%, -50%) rotate(45deg);
+}
+
+/*
+разкоментировать после подключения js
+.accordion-button:active .button__arrow::after,
+.accordion-button:focus .button__arrow::after {
+  transform: translate(-20%, -50%) rotate(45deg);
+}
+*/
+
+.accordion-section:active .accordion-button .button__arrow::before,
+.accordion-section:focus .accordion-button .button__arrow::before {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  border-color: var(--accordion-arrow-color-active);
+  background-color: var(--accordion-arrow-background-color-primary-active);
+  transform: translate(20%, -50%) rotate(-45deg);
+}
+
+/*
+разкоментировать после подключения js
+.accordion-button:active .button__arrow::before,
+.accordion-button:focus .button__arrow::before {
+  background-color: var(--accordion-arrow-background-color-primary-active);
+  transform: translate(20%, -50%) rotate(-45deg);
+}
+*/
+
+.button--accordion {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1;
 }
 
 .button__arrow {
+  position: relative;
+
   width: 1rem;
   height: 1rem;
 
   border-radius: 50%;
-  background-color: var(--button-arrow-color-backgroud);
+  background-color: var(--accordion-arrow-background-color-primary);
+}
+
+.button__arrow::before {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  right: 50%;
+
+  width: 0.3125rem;
+  height: 0.03125rem;
+
+  border: 0.03125rem solid var(--accordion-arrow-color);
+  transform: translate(20%, -50%) rotate(45deg);
+
+  transition: all 0.3s;
+}
+
+.button__arrow::after {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 0.3125rem;
+  height: 0.03125rem;
+
+  border: 0.03125rem solid var(--accordion-arrow-color);
+  transform: translate(-20%, -50%) rotate(-45deg);
+
+  transition: all 0.3s;
+}
+
+.accordion-section__content {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+
+  border-radius: 0 0 1.25rem 1.25rem;
+  background-color: var(--accordion-background-color);
+}
+
+.accordion-content-wrap {
+  height: 0; /*для работы скрытия select без js, удалить после подключения js*/
+
+  overflow: hidden; /*для работы скрытия select без js, удалить после подключения js*/
+  transition: all 1s ease; /*для работы скрытия select без js, удалить после подключения js*/
+}
+
+.accordion-section:active .accordion-content-wrap,
+.accordion-section:focus .accordion-content-wrap {
+  height: 110px; /*для работы скрытия select без js, удалить после подключения js*/
+}
+
+.accordion-section {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  position: relative;
+}
+
+.accordion-section::before {
+  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+  content: "";
+  display: block;
+  position: absolute;
+
+  top: 0;
+  left: auto;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+.accordion-section__text {
+  margin-bottom: 0.375rem;
+
+  border-top: 1px solid var(--accordion-border-color);
+  padding-top: 0.375rem;
+
+  font-size: 0.625rem;
+  line-height: 1;
+  font-weight: 300;
+
+  color: var(--accordion-section-text-color);
+}
+
+.accordion-section__price {
+  margin-bottom: 0.75rem;
+}
+
+.accordion-section__button-order {
+  margin-bottom: 0.75rem;
+}
+
+.price__value {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--price-value-color);
+}
+
+.price-value__abbr {
+  font-size: 0.75rem;
+  line-height: 1.67;
+  font-weight: 700;
+  color: var(--price-abbr-color);
+}
+
+.price__slash {
+  position: relative;
+  display: inline-block;
+  width: 0.25rem;
+  height: 0.65rem;
+}
+
+.price__slash::after {
+  content: "/";
+  position: absolute;
+  display: inline-block;
+
+  top: 10%;
+
+  font-size: 0.85rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.price__description {
+  font-size: 0.75rem;
+  line-height: 1.67;
+  font-weight: 400;
+  color: var(--price-description-color);
+}
+
+.button-order {
+  width: 5.375rem;
+  max-width: 100%;
+  min-height: 1.5625rem;
+
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 143%;
+
+  border-radius: 10px;
+
+  background: var(--button-order-background-color);
+  color: #717171;
 }
 
 .prices-contact {
   text-align: right;
 }
+
+.prices-contact__image {
+  mix-blend-mode: multiply;
+}
+
 .prices__heading {
   margin-bottom: 2.375rem;
 }
+
 .prices--description-text {
   font-weight: 700;
-  color: var(--color-text-default);
+  color: var(--text-color-default);
 }
+
 .prices-contact__button {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-bottom: 2.375rem;
   margin-left: auto;
 
   width: 10.125rem;
-  height: 3.125rem;
+  max-width: 100%;
 
   border-radius: 0.3125rem;
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--border-color-primary);
 }
 
-.prices-contact--text-button {
+.prices--button-text {
   font-size: 1.25rem;
   line-height: 1.3;
   font-weight: 700;
-  color: var(--color-text-secondary);
+  text-transform: unset;
+  color: var(--text-color-secondary);
+}
+
+.button--prices {
+  padding-top: 0.75rem;
+  padding-bottom: 0.7rem;
 }
 
 .prices-contact__image {
@@ -511,54 +859,215 @@ legend {
   justify-content: space-between;
   flex-wrap: wrap;
   column-gap: 1rem;
-
-  background-color: var(--background-color-primary);
 }
+
 .contacts__image {
   mix-blend-mode: multiply;
 }
 
 .contacts__heading {
-  top: 3.75rem;
   position: absolute;
+  margin: 0 auto;
+  top: 3.75rem;
   left: 50%;
   transform: translateX(-50%);
-  margin: 0 auto;
 }
 
 .contacts--heading-text {
   font-weight: 700;
-  color: var(--color-text-heading-inner);
+  color: var(--text-color-heading-inner);
 }
 
 .contacts__fieldset {
   padding-top: 5.9375rem;
-  min-width: 28.125rem;
+  width: 28.125rem;
+  max-width: 100%;
 }
-.fieldset-contacts__accordion-section {
+
+.fieldset-contacts__select-section {
+  margin-bottom: 1rem;
   width: 100%;
-  min-height: 3.125rem;
 }
 
-.fieldset-contacts__accordion-section {
-  background-color: var(--accordion-background-color);
+.select-section__list {
+  padding: 0; /*для работы скрытия select без js, удалить после подключения js*/
+
+  height: 0; /*для работы скрытия select без js, удалить после подключения js*/
+  width: 100%;
+
+  background-color: var(--select-section-value-background-color);
+  /* 
+  Разкомментировать после подключения js
+  padding-top: 0.9375rem; 
+  padding-bottom: 1.1875rem; */
+
+  overflow: hidden; /*для работы скрытия select без js, удалить после подключения js*/
+  transition: all 1s ease; /*для работы скрытия select без js, удалить после подключения js*/
 }
 
-.fieldset-contacts .accordion-section__hedding {
-  padding-left: 1.25rem;
+.select-section__item {
+  padding-left: 2.1875rem;
   padding-right: 2.1875rem;
 }
 
-.heading--contacts-accordion-section {
+.select-section__item + .select-section__item {
+  padding-bottom: 0.75rem;
+}
+
+.select-section__item:hover .select-section__text {
+  color: var(--select-section-text-color-active);
+  cursor: pointer;
+}
+
+.select-section__text {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.05em;
+
+  border-bottom: 1px solid var(--select-section-border-color);
+  color: var(--select-section-text-color);
+}
+
+.select-section__heading {
+  position: relative; /*для работы скрытия select без js, удалить после подключения js*/
+}
+
+.select-section__heading::before {
+  /*для работы скрытия select без js, удалить после подключения js*/
+
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: auto;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+.select-section__heading:active + .select-section__list,
+.select-section__heading:focus + .select-section__list {
+  /*для работы скрытия select без js, удалить после подключения js*/
+  height: 234px;
+  padding-top: 0.9375rem;
+  padding-bottom: 1.1875rem;
+}
+
+.select-section__button {
+  padding-left: 1.25rem;
+  padding-right: 2.1875rem;
+}
+.select-button {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--text-color-heading-primary);
+}
+
+.select-button__text {
   line-height: 2;
   font-weight: 400;
   letter-spacing: 0.05em;
-  color: var(--color-text-heading-primary);
 }
+
+.button--contacts {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  background-color: var(--accordion-background-color);
+  box-shadow: var(--box-shadow-primary);
+
+  transition: all 0.3s;
+}
+
+.button--contacts .button__arrow {
+  background-color: var(--select-arrow-background-color-secondary);
+}
+
+.button--contacts .button__arrow::after {
+  border: 0.03125rem solid var(--accordion-arrow-color-active);
+}
+
+.button--contacts .button__arrow::before {
+  border: 0.03125rem solid var(--accordion-arrow-color-active);
+}
+
+.select-section__heading:active .button__arrow::after,
+.select-section__heading:focus .button__arrow::after {
+  /*удалить после подключения js*/
+  transform: translate(-20%, -50%) rotate(45deg);
+}
+
+/* 
+Разкомментировать после подключения js
+.select-button:active .button__arrow::after,
+.select-button:focus .button__arrow::after {
+  transform: translate(-20%, -50%) rotate(45deg);
+} */
+
+.select-section__heading:active .button__arrow::before,
+.select-section__heading:focus .button__arrow::before {
+  /*удалмть после подключения js*/
+  background-color: var(--accordion-arrow-background-color-primary-active);
+  transform: translate(20%, -50%) rotate(-45deg);
+}
+
+/* 
+Разкомментировать после подключения js
+.select-button:active .button__arrow::before,
+.select-button:focus .button__arrow::before {
+  background-color: var(--accordion-arrow-background-color-primary-active);
+  transform: translate(20%, -50%) rotate(-45deg);
+}
+*/
+
+.select-section__heading:active .button--contacts,
+.select-section__heading:focus .button--contacts {
+  /*удалмть после подключения js*/
+  box-shadow: var(--box-shadow-primary-active);
+  background-color: var(--select-background-color-active);
+  border: 1px solid var(--select-border-color-active);
+}
+
+/* 
+Разкомментировать после подключения js
+.button--contacts:active,
+.button--contacts:focus {
+  box-shadow: var(--box-shadow-primary-active);
+  background-color: var(--select-background-color-active);
+  border: 1px solid var(--select-border-color-active);
+}
+*/
+
+.select-section__heading:active .button__arrow,
+.select-section__heading:focus .button__arrow {
+  /*удалмть после подключения js*/
+  background-color: var(--select-arrow-background-color-secondary-active);
+}
+
+/* 
+Разкомментировать после подключения js
+.button--contacts:active .button__arrow,
+.button--contacts:focus .button__arrow {
+  background-color: var(--select-arrow-background-color-secondary-active);
+}
+*/
 
 /* ------------------------footer------------------------ */
 
 .footer {
+  position: relative;
+
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 
@@ -574,10 +1083,15 @@ legend {
 .footer__link {
   position: relative;
 }
+
 .link-rrs {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.link-rrs:active {
+  top: 42px;
 }
 
 .footer__copyright,
@@ -587,7 +1101,25 @@ legend {
   align-items: center;
   gap: 1.25rem;
 }
+
 .social__item {
+  position: relative;
+}
+
+.social__link {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
+}
+
+.social__link::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 44px;
+  height: 44px;
 }
