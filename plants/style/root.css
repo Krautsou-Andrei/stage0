@@ -1,1 +1,77 @@
+:root {
+  --width: 90rem;
 
+  --pallete-marshland: rgb(1, 2, 1);
+  --pallete-altolame-pea: rgb(224, 103, 51);
+  --pallete-dove-gray: rgb(113, 113, 113);
+  --pallete-vida-loca: rgb(73, 154, 24);
+  --pallete-scorpion: rgb(99, 96, 96);
+  --pallete-black: rgb(0, 0, 0);
+  --pallete-gray-nurse: rgb(237, 242, 236);
+  --pallete-moon-color: rgb(227, 225, 213);
+  --pallete-alto: rgb(217, 217, 217);
+  --pallete-willow-brook: rgb(214, 231, 210);
+  --pallete-white: rgb(255, 255, 255);
+  --pallete-yellow-green: rgb(193, 230, 152);
+  --pallete-martini: rgb(174, 161, 161);
+  --pallete-sage: rgb(139, 160, 126);
+  --pallete-willow-brook: rgb(220, 233, 217);
+  --text-color-default: var(--pallete-black);
+  --text-color-primary: var(--pallete-marshland);
+  --text-color-primary-active: var(--pallete-white);
+  --text-color-primary-hover: var(--pallete-vida-loca);
+  --text-color-secondary: var(--pallete-altolame-pea);
+  --text-color-heading-primary: var(--pallete-dove-gray);
+  --text-color-heading-secondary: var(--pallete-altolame-pea);
+  --text-color-heading-inner: var(--pallete-vida-loca);
+  --text-color-button: var(--pallete-black);
+
+  --logo-color-hover: var(--pallete-altolame-pea);
+  --logo-color-active: var(--pallete-white);
+  --logo-svg-color: var(--pallete-vida-loca);
+
+  --border-color-primary: var(--pallete-altolame-pea);
+  --border-color-secondary: var(--pallete-moon-color);
+
+  --background-color-primary: var(--pallete-gray-nurse);
+  --background-color-defaul: var(--pallete-white);
+  --background-color-secondary: var(--pallete-white);
+  --background-color-header: var(--pallete-white);
+  --background-color-disabled: var(--pallete-moon-coloroncrete);
+
+  --accordion-background-color: var(--pallete-willow-brook);
+  --accordion-button-background-color: var(--pallete-gray-nurse);
+  --accordion-button-background-color-active: var(--pallete-willow-brook);
+  --accordion-arrow-background-color-primary: var(--pallete-alto);
+  --accordion-arrow-background-color-primary-active: var(--pallete-martini);
+  --accordion-arrow-color: var(--pallete-black);
+  --accordion-arrow-color-active: var(--pallete-white);
+  --accordion-border-color: var(--pallete-martini);
+  --accordion-border-color-active: var(--pallete-willow-brook);
+  --accordion-section-text-color: var(--pallete-dove-gray);
+
+  --price-abbr-color: var(--pallete-altolame-pea);
+  --price-value-color: var(--pallete-altolame-pea);
+  --price-description-color: var(--pallete-black);
+
+  --select-arrow-background-color-secondary: var(--pallete-martini);
+  --select-arrow-background-color-secondary-active: var(--pallete-sage);
+  --select-background-color-active: var(--pallete-yellow-green);
+  --select-border-color-active: var(--pallete-willow-brook);
+  --select-section-value-background-color: var(--pallete-willow-brook);
+  --select-section-text-color: var(--pallete-vida-loca);
+  --select-section-text-color-active: var(--pallete-dove-gray);
+  --select-section-border-color: var(--pallete-alto);
+
+  --button-background-color-active: var(--pallete-altolame-pea);
+  --button-order-background-color: var(--pallete-white);
+  --button-order-text-color: var(--pallete-dove-gray);
+
+  --box-shadow-primary: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-primary-active: 0px 4px 4px rgba(0, 0, 0, 0);
+
+  --text-xxl: 2.8125rem;
+  --text-xl: 2.5rem;
+  --text-lg: 1.25rem;
+  --text-xxl-768: 2.1875rem;
+}
