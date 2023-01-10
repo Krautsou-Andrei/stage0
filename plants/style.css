@@ -1,80 +1,3 @@
-:root {
-  --width: 90rem;
-
-  --pallete-marshland: rgb(1, 2, 1);
-  --pallete-altolame-pea: rgb(224, 103, 51);
-  --pallete-dove-gray: rgb(113, 113, 113);
-  --pallete-vida-loca: rgb(73, 154, 24);
-  --pallete-scorpion: rgb(99, 96, 96);
-  --pallete-black: rgb(0, 0, 0);
-  --pallete-gray-nurse: rgb(237, 242, 236);
-  --pallete-moon-color: rgb(227, 225, 213);
-  --pallete-alto: rgb(217, 217, 217);
-  --pallete-willow-brook: rgb(214, 231, 210);
-  --pallete-white: rgb(255, 255, 255);
-  --pallete-yellow-green: rgb(193, 230, 152);
-  --pallete-martini: rgb(174, 161, 161);
-  --pallete-sage: rgb(139, 160, 126);
-  --pallete-willow-brook: rgb(220, 233, 217);
-  --text-color-default: var(--pallete-black);
-  --text-color-primary: var(--pallete-marshland);
-  --text-color-primary-active: var(--pallete-white);
-  --text-color-primary-hover: var(--pallete-vida-loca);
-  --text-color-secondary: var(--pallete-altolame-pea);
-  --text-color-heading-primary: var(--pallete-dove-gray);
-  --text-color-heading-secondary: var(--pallete-altolame-pea);
-  --text-color-heading-inner: var(--pallete-vida-loca);
-  --text-color-button: var(--pallete-black);
-
-  --logo-color-hover: var(--pallete-altolame-pea);
-  --logo-color-active: var(--pallete-white);
-  --logo-svg-color: var(--pallete-vida-loca);
-
-  --border-color-primary: var(--pallete-altolame-pea);
-  --border-color-secondary: var(--pallete-moon-color);
-
-  --background-color-primary: var(--pallete-gray-nurse);
-  --background-color-defaul: var(--pallete-white);
-  --background-color-secondary: var(--pallete-white);
-  --background-color-header: var(--pallete-white);
-  --background-color-disabled: var(--pallete-moon-coloroncrete);
-
-  --accordion-background-color: var(--pallete-willow-brook);
-  --accordion-button-background-color: var(--pallete-gray-nurse);
-  --accordion-button-background-color-active: var(--pallete-willow-brook);
-  --accordion-arrow-background-color-primary: var(--pallete-alto);
-  --accordion-arrow-background-color-primary-active: var(--pallete-martini);
-  --accordion-arrow-color: var(--pallete-black);
-  --accordion-arrow-color-active: var(--pallete-white);
-  --accordion-border-color: var(--pallete-martini);
-  --accordion-border-color-active: var(--pallete-willow-brook);
-  --accordion-section-text-color: var(--pallete-dove-gray);
-
-  --price-abbr-color: var(--pallete-altolame-pea);
-  --price-value-color: var(--pallete-altolame-pea);
-  --price-description-color: var(--pallete-black);
-
-  --select-arrow-background-color-secondary: var(--pallete-martini);
-  --select-arrow-background-color-secondary-active: var(--pallete-sage);
-  --select-background-color-active: var(--pallete-yellow-green);
-  --select-border-color-active: var(--pallete-willow-brook);
-  --select-section-value-background-color: var(--pallete-willow-brook);
-  --select-section-text-color: var(--pallete-vida-loca);
-  --select-section-text-color-active: var(--pallete-dove-gray);
-  --select-section-border-color: var(--pallete-alto);
-
-  --button-background-color-active: var(--pallete-altolame-pea);
-  --button-order-background-color: var(--pallete-white);
-  --button-order-text-color: var(--pallete-dove-gray);
-
-  --box-shadow-primary: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  --box-shadow-primary-active: 0px 4px 4px rgba(0, 0, 0, 0);
-
-  --text-xxl: 2.8125rem;
-  --text-xl: 2.5rem;
-  --text-lg: 1.25rem;
-}
-
 *,
 *::before,
 *::after {
@@ -82,14 +5,13 @@
 }
 
 html {
-  font-family: "AvenirNextRoundedStd";
+  font-family: "Inter", sans-serif;
   font-weight: normal;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inika", sans-serif;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -196,10 +118,6 @@ legend {
   padding: 0;
 }
 
-/* ::-webkit-scrollbar {
-  width: 0;
-} */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -218,22 +136,22 @@ body {
   background-color: var(--background-color-defaul);
 }
 
-.header,
-.about,
-.welcome,
-.service,
-.prices,
-.contacts,
-.footer {
+.header__container,
+.about__container,
+.welcome__container,
+.service__container,
+.prices__container,
+.contacts__container,
+.footer__container {
   padding-left: 6.8125rem;
   padding-right: 6.8125rem;
   /* padding: 0 calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768))); */
   /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
 }
 
-.about,
-.welcome,
-.prices {
+.about__container,
+.welcome__container,
+.prices__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -249,7 +167,6 @@ body {
 .prices__fieldset,
 .prices__contact {
   flex: 1;
-  /* overflow: hidden; */
   width: 17.5rem;
   max-width: 100%;
 }
@@ -259,6 +176,7 @@ body {
 .prices__heading span {
   color: var(--text-color-heading-inner);
 }
+
 .header,
 .welcome,
 .service,
@@ -338,7 +256,7 @@ body {
 
 /* ------------------------header--------------------------- */
 
-.header {
+.header__container {
   padding-top: 2.625rem; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
   padding-bottom: 2.625rem;
 
@@ -361,6 +279,7 @@ body {
 }
 
 .logo__text {
+  font-family: "Inika";
   font-weight: 400;
   font-size: 1rem;
   line-height: 3.125;
@@ -381,6 +300,7 @@ body {
 }
 
 .menu {
+  font-family: "Inika";
   font-size: 1rem;
   line-height: 3.125; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
   font-weight: 400;
@@ -415,7 +335,7 @@ body {
 
 /* -------------------------------welcome------------------------- */
 
-.welcome {
+.welcome__container {
   padding-top: 3.875rem;
   padding-bottom: 3.875rem;
 }
@@ -463,7 +383,7 @@ body {
 
 /* -----------------------------about----------------------- */
 
-.about {
+.about__container {
   padding-top: 5.8125rem;
   padding-bottom: 5.875rem;
 }
@@ -473,6 +393,7 @@ body {
 }
 
 .about--description-text {
+  font-family: "Inika";
   color: var(--text-color-heading-secondary);
 }
 
@@ -482,7 +403,7 @@ body {
 
 /* ------------------service------------------------ */
 
-.service {
+.service__container {
   padding-top: 2.5rem;
   padding-bottom: 7.5625rem;
 }
@@ -503,6 +424,10 @@ body {
   /* overflow: hidden; */
 }
 
+.service-heading--text {
+  font-family: "Inika";
+}
+
 .service-button__list {
   display: flex;
   gap: 2.375rem;
@@ -520,6 +445,8 @@ body {
 .button--service {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+
+  font-family: "inika";
 }
 
 .service-button__link {
@@ -594,7 +521,7 @@ body {
 }
 
 /* -----------------------prices-------------------------- */
-.prices {
+.prices__container {
   padding-top: 2.5rem;
   padding-bottom: 7.1875rem;
 }
@@ -919,6 +846,8 @@ body {
 .button--prices {
   padding-top: 0.75rem;
   padding-bottom: 0.7rem;
+
+  font-family: "Inika";
 }
 
 .prices-contact__image {
@@ -929,7 +858,7 @@ body {
 }
 
 /* ---------------------contacts--------------------------- */
-.contacts {
+.contacts__container {
   padding-top: 3.3125rem;
 
   position: relative;
@@ -953,6 +882,7 @@ body {
 }
 
 .contacts--heading-text {
+  font-family: "Inika";
   font-weight: 700;
   color: var(--text-color-heading-inner);
 }
@@ -1144,7 +1074,7 @@ body {
 
 /* ------------------------footer------------------------ */
 
-.footer {
+.footer__container {
   position: relative;
 
   padding-top: 2.5rem;
