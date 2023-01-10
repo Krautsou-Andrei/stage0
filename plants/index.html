@@ -30,17 +30,17 @@
       <nav class="header__menu menu">
         <ul class="menu__list">
           <li class="menu__item"><a class="menu__link link link--home" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link link" href="#">About us</a></li>
-          <li class="menu__item"><a class="menu__link link" href="#">Service</a></li>
-          <li class="menu__item"><a class="menu__link link" href="#">Price</a></li>
-          <li class="menu__item"><a class="menu__link link" href="#">Contacts</a></li>
+          <li class="menu__item"><a class="menu__link link" href="#about">About us</a></li>
+          <li class="menu__item"><a class="menu__link link" href="#service">Service</a></li>
+          <li class="menu__item"><a class="menu__link link" href="#price">Price</a></li>
+          <li class="menu__item"><a class="menu__link link" href="#contacts">Contacts</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="main" class="main ">
     <div class="main__container ">
-      <section class="welcome">
+      <section class="welcome" id="welcome">
         <div class="welcome__container container">
           <div class="welcome__image image">
             <img class="image__welcome" src="./image/leafs.jpg" width="448" height="407" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
@@ -56,7 +56,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="about__container container">
           <div class="about_description description ">
             <h2 class="description__heading heading--xl about--description-text"><span>We are </span>professional experienced<span> gardeners</span></h2>
@@ -71,7 +71,7 @@
         </div>
 
       </section>
-      <section class="service">
+      <section class="service" id="service">
         <div class="service__container container">
           <header class="service__header">
             <h2 class="service__heading heading--xl service-heading--text"><span>Service and our projects</span></h2>
@@ -180,7 +180,7 @@
         </div>
 
       </section>
-      <section class="prices">
+      <section class="prices" id="price">
         <div class="prices__container container">
           <fieldset class="prices__fieldset fieldset-prices" id="fieldset-prices">
             <legend class="fieldset-prices__legend heading--xl prices--description-text">Prices</legend>
