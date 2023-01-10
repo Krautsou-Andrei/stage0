@@ -136,6 +136,11 @@ body {
   background-color: var(--background-color-defaul);
 }
 
+.container {
+  max-width: var(--width); /*заменить на max-width, для адаптива*/
+  margin: 0 auto;
+}
+
 .header__container,
 .about__container,
 .welcome__container,
@@ -143,8 +148,8 @@ body {
 .prices__container,
 .contacts__container,
 .footer__container {
-  padding-left: 6.8125rem;
-  padding-right: 6.8125rem;
+  padding-left: 109px;
+  padding-right: 109px;
   /* padding: 0 calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768))); */
   /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
 }
@@ -155,20 +160,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 14rem;
+  /* gap: 14rem; */
   /* gap: calc(42px + (224 - 42) * ((100vw - 768px) / (1440 - 768))); */
   /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения растояния между объектами*/
 }
 
 .welcome__image,
-.welcome_description,
-.about_description,
+.welcome__description,
+.about__description,
 .about__image,
 .prices__fieldset,
 .prices__contact {
   flex: 1;
-  width: 17.5rem;
-  max-width: 100%;
 }
 
 .description__heading span,
@@ -269,11 +272,6 @@ body {
   background-color: var(--background-color-primary);
 }
 
-.container {
-  max-width: var(--width); /*заменить на max-width, для адаптива*/
-  margin: 0 auto;
-}
-
 .logo svg {
   stroke: var(--logo-svg-color);
 }
@@ -349,9 +347,14 @@ body {
   height: auto;
 }
 
+.welcome__description {
+  max-width: 34.3125rem;
+}
+
 .description__heading {
   margin-top: 2.25rem;
   margin-bottom: 2.625rem;
+  max-width: 34.3125rem;
 }
 
 .welcom--description-text {
@@ -360,7 +363,7 @@ body {
 
 .description__text {
   margin-bottom: 3rem;
-  max-width: 32.8125rem;
+  max-width: 37.8125rem;
 }
 
 .text--description {
@@ -386,6 +389,7 @@ body {
 .about__container {
   padding-top: 5.8125rem;
   padding-bottom: 5.875rem;
+  /* gap: 5rem; */
 }
 
 .about__image {
@@ -526,7 +530,7 @@ body {
   padding-bottom: 7.1875rem;
 }
 
-.fieldset__legend {
+.fieldset-prices__legend {
   margin-bottom: 3.75rem;
 }
 
