@@ -16,10 +16,12 @@
   --pallete-martini: rgb(174, 161, 161);
   --pallete-sage: rgb(139, 160, 126);
   --pallete-willow-brook: rgb(220, 233, 217);
+  --pallete-a: #717171;
+
   --text-color-default: var(--pallete-black);
   --text-color-primary: var(--pallete-marshland);
   --text-color-primary-active: var(--pallete-white);
-  --text-color-primary-hover: var(--pallete-vida-loca);
+  --text-color-primary-hover: var(--pallete-altolame-pea);
   --text-color-secondary: var(--pallete-altolame-pea);
   --text-color-heading-primary: var(--pallete-dove-gray);
   --text-color-heading-secondary: var(--pallete-altolame-pea);
@@ -49,6 +51,7 @@
   --accordion-border-color: var(--pallete-martini);
   --accordion-border-color-active: var(--pallete-willow-brook);
   --accordion-section-text-color: var(--pallete-dove-gray);
+  --accordion-button-order-text-color: var(--pallete-a);
 
   --price-abbr-color: var(--pallete-altolame-pea);
   --price-value-color: var(--pallete-altolame-pea);
@@ -74,4 +77,9 @@
   --text-xl: 2.5rem;
   --text-lg: 1.25rem;
   --text-xxl-768: 2.1875rem;
+  --text-xl-768: 2.1875rem;
+  --text-xl-prices-768: 1.5625rem;
+  --text-xl-contacts-768: 2.5rem;
+
+  --transition-accordion: all 0.75s ease-in-out;
 }
