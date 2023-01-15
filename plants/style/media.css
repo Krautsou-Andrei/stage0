@@ -1,3 +1,21 @@
+@media only screen and (max-width: 1440px) {
+  .header__container,
+  .about__container,
+  .welcome__container,
+  .service__container,
+  .prices__container,
+  .contacts__container,
+  .footer__container {
+    padding: 0 calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768)));
+    /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
+  }
+
+  .collection__list {
+    row-gap: calc(38px + (55 - 38) * ((100vw - 768px) / (1440 - 768)));
+    column-gap: calc(107px + (117 - 107) * ((100vw - 768px) / (1440 - 768)));
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .header__container,
   .about__container,
@@ -26,7 +44,6 @@
   .welcome__description {
     order: -1;
     max-width: 346px;
-    opacity: 0.46;
   }
 
   .welcome__image {
@@ -106,6 +123,18 @@
     row-gap: 9px;
   }
 
+  .collection__list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    row-gap: 38px; /*------------------------*/
+    column-gap: 107px; /*------------------------*/
+  }
+
+  .collection__item {
+    max-width: 280px;
+  }
+
   .item__image {
     aspect-ratio: 280 /350;
   }
@@ -155,7 +184,6 @@
 
   .contacts__image {
     max-width: 200px;
-    mix-blend-mode: multiply;
   }
 
   .image--contacts {
@@ -199,5 +227,199 @@
   }
 }
 
+@media only screen and (max-width: 633px) {
+  .menu-burger__wrap {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .logo__text {
+    line-height: 1.25;
+  }
+
+  .welcome__image {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 380px) {
+  .header__container,
+  .about__container,
+  .welcome__container,
+  .service__container,
+  .prices__container,
+  .contacts__container,
+  .footer__container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .button__text {
+    font-size: 0.625rem;
+    line-height: 2;
+  }
+  /* -------------welcome----------------- */
+  .welcome__container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .welcome .description__heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .heading--xxl {
+    font-size: var(--text-xxl-380);
+    line-height: 1.4;
+  }
+
+  .description__text {
+    margin-bottom: 20px;
+  }
+
+  .description__button-welcome {
+    min-height: 2.125rem;
+    width: 6.25rem;
+    max-width: 100%;
+  }
+
+  /* ------------------about--------------- */
+  .about__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 0;
+  }
+
+  .about .description__heading {
+    margin-bottom: 21px;
+    min-height: 57px;
+  }
+
+  .about .heading--xl {
+    font-size: var(--text-xl-380);
+    line-height: 1.14;
+  }
+
+  .about__image {
+    max-width: 150px;
+  }
+
+  .image--about {
+    aspect-ratio: 150 / 147;
+  }
+
+  .text--about {
+    font-size: 0.9375rem;
+    line-height: 1.67;
+  }
+
+  /* -------------service ------------*/
+  .service__container {
+    padding-top: 30px;
+    padding-bottom: 27px;
+  }
+
+  .service__header {
+    margin-bottom: 40px;
+    row-gap: 35px;
+  }
+
+  .service-button__list {
+    column-gap: 10px;
+  }
+
+  .service-button__item {
+    width: 7.5625rem;
+    min-height: 2.1875rem;
+  }
+
+  .service .button__text {
+    font-size: 0.9375rem;
+    line-height: 1.33;
+  }
+
+  .collection__list {
+    row-gap: 34px; /*------------------------*/
+  }
+
+  /* -------------prices-------------- */
+
+  .prices__container {
+    padding-top: 25px;
+    padding-bottom: 40px;
+    gap: 19px;
+  }
+
+  .prices__heading {
+    margin-bottom: 40px;
+  }
+
+  .prices__contact {
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .prices-contact .heading--xl {
+    line-height: 1.2;
+  }
+
+  .prices-contact__heading {
+    margin-bottom: 14px;
+  }
+
+  .accordion .heading--lg {
+    font-size: var(--text-lg-prices-380);
+    line-height: 1.33;
+  }
+
+  .prices-contact__button {
+    margin: 0 auto;
+    max-width: 7.5625rem;
+    min-height: 2.1875rem;
+  }
+
+  .prices-contact .button__text {
+    font-size: 0.9375rem;
+    line-height: 1.33;
+  }
+
+  .prices-contact__image {
+    display: none;
+  }
+
+  /* ---------------------contacts--------------------------- */
+  .contacts__container {
+    padding-top: 25px;
+  }
+
+  .contacts__heading {
+    margin-bottom: 80px;
+  }
+
+  .contacts .heading--xl {
+    font-size: var(--text-xl-contacts-380);
+    line-height: 1.28;
+  }
+
+  .contacts__select-section {
+    margin-bottom: 132px;
+  }
+
+  .contacts__image {
+    max-width: 100px;
+  }
+
+  .image--contacts {
+    aspect-ratio: 100 / 124;
+  }
+
+  /* -----------------footer----------- */
+  .footer__container {
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
 }

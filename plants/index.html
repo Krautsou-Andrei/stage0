@@ -10,9 +10,11 @@
   <script type="module" src="./js/listeners.js"></script>
   <script type="module" src="./js/accordion.js"></script>
   <script type="module" src="./js/select.js"></script>
+  <script type="module" src="./js/menu-burger.js"></script>
   <script src="./js/index.js" defer></script>
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="./style/root.css">
+  <link rel="stylesheet" href="./style/menu-burger.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./style/media.css">
   <title>Plants</title>
@@ -32,14 +34,30 @@
         </div>
       </a>
       <nav class="header__menu menu">
-        <ul class="menu__list">
+        <ul class="menu__list" role="list">
           <li class="menu__item"><a class="menu__link link" href="#">Home</a></li>
           <li class="menu__item"><a class="menu__link link" href="#about">About us</a></li>
           <li class="menu__item"><a class="menu__link link" href="#service">Service</a></li>
           <li class="menu__item"><a class="menu__link link" href="#price">Price</a></li>
           <li class="menu__item"><a class="menu__link link" href="#contacts">Contacts</a></li>
         </ul>
+
       </nav>
+      <div class="menu-burger__wrap" data-menu-burger>
+        <button class="menu-burger__button menu-burger-button" type="button" aria-expanded="false" data-menu-burger-button>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="header__menu menu-burger" inert data-menu-burger-content>
+          <ul class="menu-burger__list" role="list">
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#" data-menu-burger-link>Home</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#about" data-menu-burger-link>About us</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#service" data-menu-burger-link>Service</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#price" data-menu-burger-link>Price</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#contacts" data-menu-burger-link>Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="main" class="main ">
