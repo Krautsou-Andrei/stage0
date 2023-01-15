@@ -5,6 +5,7 @@ const SELECTORS = {
   BUTTON: "[data-accordion-button]",
   CONTENT: "[data-accordion-content]",
   SECTION: "[data-accordion-section]",
+  ORDER_BUTTON: "[data-order-button]",
 };
 
 const STATES_SECTION = {
@@ -29,6 +30,7 @@ class Collapse {
     this.element = node;
     this.button = this.element.querySelector(SELECTORS.BUTTON);
     this.content = this.element.querySelector(SELECTORS.CONTENT);
+    this.orderButtons = this.element.querySelectorAll(SELECTORS.ORDER_BUTTON);
 
     this.state = STATES_SECTION.OPENED;
 
@@ -60,6 +62,9 @@ class Collapse {
     this._animateContent(false, STATES_SECTION.CLOSED);
     this.button.setAttribute("aria-expanded", false);
     this.content.classList.remove("accordion-active");
+    this.orderButtons.forEach((button) => {
+      button.tabIndex = -1;
+    });
   }
 
   opened() {
@@ -67,6 +72,9 @@ class Collapse {
     this._animateContent(true, STATES_SECTION.OPENED);
     this.button.setAttribute("aria-expanded", true);
     this.content.classList.add("accordion-active");
+    this.orderButtons.forEach((button) => {
+      button.tabIndex = 0;
+    });
   }
 
   _animateContent(reverse, endState) {
@@ -151,5 +159,5 @@ class Accordion {
 }
 
 const accordion = document.querySelector(SELECTORS.ACCORDION);
-console.log(accordion);
+
 new Accordion(accordion, ACCORDION_CONFIG);
