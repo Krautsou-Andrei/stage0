@@ -230,14 +230,14 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
               <div class="fieldset-prices__accordion-section accordion__section accordion-section" data-accordion-section>
                 <h3 class="accordion-section__heading heading--lg">
                   <button class="accordion-section__button accordion-button button--accordion " id="accordion2id" type="button" aria-expanded="false" aria-controls="sect2" data-accordion-button>
-                    <span>Standart</span>
+                    <span>Standard</span>
                     <span class="button__arrow"></span>
                   </button>
                 </h3>
@@ -253,7 +253,7 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
@@ -276,14 +276,14 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="prices__contact prices-contact">
-            <h4 class="prices-contact__heading heading--xl prices-contact--heading-text">Our best <span>gardeners</span> are ready to help you</h4>
+            <h3 class="prices-contact__heading heading--xl prices-contact--heading-text">Our best <span>gardeners</span> are ready to help you</h3>
             <div class="prices-contact__button ">
               <button class="button button--prices" type="button">
                 <span class="button__text">Contact us</span>
@@ -297,37 +297,61 @@
       </section>
 
       <section class="contacts" id="contacts">
-        <div class="contacts__container container">
+        <div class="contacts__container container" data-select>
 
-          <div class="contacts__image image">
+          <div class="contacts__image image" data-select-image>
             <img class="image__media image--contacts" src="./image/contact_woman.jpg" width="400" height="497" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
           </div>
 
 
-          <div class="contacts__select select" data-select>
+          <div class="contacts__select select">
             <h2 class="contacts__heading heading--xl contacts--heading-text">Contact us</h2>
             <div class="contacts__select-section select__section select-section" data-select-section>
-              <h3 class="select-section__heading heading--lg heading--contacts-select-section" tabindex="0"><!--Удалить tabindex, после добавления js для select-->
+              <h3 class="select-section__heading heading--lg heading--contacts-select-section">
                 <button class="select-section__button select-button  button--contacts" id="select1id" type="button" aria-expanded="false" aria-controls="select-sect1" data-select-button>
-                  <span class="select-button__text">City</span>
+                  <span class="select-button__text" data-select-view-text>City</span>
                   <span class="button__arrow"></span>
                 </button>
               </h3>
               <div class="select-content-wrap" data-select-content>
                 <ul class="select-section__list" id="select-sect1" aria-labelledby="select1id">
                   <li class="select-section__item">
-                    <p class="select-section__text">Canandaigua, NY</p>
+                    <p class="select-section__text" data-select-link>Canandaigua, NY</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">New York City</p>
+                    <p class="select-section__text" data-select-link>New York City</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">Yonkers, NY</p>
+                    <p class="select-section__text" data-select-link>Yonkers, NY</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">Sherrill, NY</p>
+                    <p class="select-section__text " data-select-link>Sherrill, NY</p>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div class="select__address address-select">
+              <div class="address-select__wrap" data-select-address>
+                <div class="address-select__column-wrap">
+                  <div class="address-select__column column--title">
+                    <span>City:</span>
+                    <span>Phone:</span>
+                    <span>Office adress:</span>
+                  </div>
+                  <div class="address-select__column">
+                    <span data-address-city>Canandaigua, NY</span>
+                    <span>+1 585 393 0001</span>
+                    <span>151 Charlotte Street</span>
+                  </div>
+                </div>
+
+
+
+                <div class="address-select__button">
+                  <button class="button address-select--button" type="button" tabindex="-1" data-address-button>
+                    <span class="button__text">Call us</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

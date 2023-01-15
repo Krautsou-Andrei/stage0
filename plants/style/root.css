@@ -64,6 +64,9 @@
   --select-section-text-color: var(--pallete-vida-loca);
   --select-section-text-color-active: var(--pallete-dove-gray);
   --select-section-border-color: var(--pallete-alto);
+  --select-address-border-color: var(--pallete-black);
+  --select-address-text-color-primary: var(--pallete-black);
+  --select-address-text-color-secondary: var(--pallete-dove-gray);
 
   --button-background-color-active: var(--pallete-altolame-pea);
   --button-order-background-color: var(--pallete-white);
@@ -80,10 +83,13 @@
   --text-lg: 1.25rem;
   --text-xxl-768: 2.1875rem;
   --text-xl-768: 2.1875rem;
+  --text-xl-service-768: 1.5625rem;
   --text-xl-prices-768: 1.5625rem;
   --text-xl-contacts-768: 2.5rem;
   --text-xxl-380: 1.5625rem;
   --text-xl-380: 1.5625rem;
+  --text-xl-prices-380: 1.5625rem;
+  --text-xl-prices-contacts-380: 1.25rem;
   --text-lg-prices-380: 0.9375rem;
   --text-xl-contacts-380: 1.5625rem;
 
