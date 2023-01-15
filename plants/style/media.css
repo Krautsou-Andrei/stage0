@@ -99,6 +99,10 @@
     font-size: var(--text-xl-768);
   }
 
+  .about .description__text {
+    min-height: 208px;
+  }
+
   .about__image {
     max-width: 250px;
   }
@@ -140,14 +144,24 @@
     aspect-ratio: 280 /350;
   }
 
+  .item__description {
+    padding-bottom: 20px;
+  }
+
+  .descripton__heading {
+    margin-bottom: 10px; /*на макете 10px*/
+  }
+
   /* -------------prices-------------- */
 
   .prices__container {
     padding-bottom: 88px;
+    gap: 0;
   }
 
   .prices__heading {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
+    padding-left: 15px;
   }
 
   .prices__contact {
@@ -160,7 +174,7 @@
   }
 
   .prices-contact__heading {
-    margin-bottom: 22px;
+    margin-bottom: 25px;
   }
 
   .prices-contact__button {
@@ -172,15 +186,23 @@
     padding-top: 40px;
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
 
   .contacts__select {
+    position: relative;
     order: -1;
     padding-top: 0px;
   }
 
   .contacts__select-section {
+    margin-top: 100px;
     margin-bottom: 250px;
+  }
+
+  .contacts__select-section.active {
+    margin-top: 61px;
+    margin-bottom: 289px;
   }
 
   .contacts__image {
@@ -194,8 +216,6 @@
   .contacts__heading {
     position: static;
 
-    margin-bottom: 100px;
-
     top: 0;
     left: 0;
     transform: translateX(0);
@@ -204,6 +224,18 @@
 
   .contacts .heading--xl {
     font-size: var(--text-xl-contacts-768);
+  }
+
+  /* ----------------------- */
+
+  .select__address {
+    position: absolute;
+    top: 224px;
+    width: 100%;
+  }
+
+  .address-select__column-wrap {
+    margin-bottom: 17px;
   }
 
   /* -----------------footer----------- */
@@ -247,6 +279,10 @@
   .welcome__image {
     display: none;
   }
+
+  .prices-contact__image {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 380px) {
@@ -254,8 +290,6 @@
   .about__container,
   .welcome__container,
   .service__container,
-  .prices__container,
-  .contacts__container,
   .footer__container {
     padding-left: 25px;
     padding-right: 25px;
@@ -286,7 +320,7 @@
   }
 
   .description__text {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .description__button-welcome {
@@ -333,7 +367,16 @@
 
   .service__header {
     margin-bottom: 40px;
-    row-gap: 35px;
+    row-gap: 40px;
+  }
+
+  .service__heading {
+    max-width: 187px;
+  }
+
+  .service .heading--xl {
+    font-size: var(--text-xl-service-768);
+    line-height: 1.28;
   }
 
   .service-button__list {
@@ -359,11 +402,20 @@
   .prices__container {
     padding-top: 25px;
     padding-bottom: 40px;
+    padding-left: 20.79%;
+    padding-right: 20.79%;
     gap: 19px;
   }
 
   .prices__heading {
     margin-bottom: 40px;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .prices__heading.heading--xl {
+    font-size: var(--text-xl-prices-380);
+    line-height: 1.2;
   }
 
   .prices__contact {
@@ -384,6 +436,28 @@
     line-height: 1.33;
   }
 
+  .prices__accordion {
+    padding: 29px 22px;
+
+    max-width: 224px;
+
+    gap: 14px;
+  }
+
+  .accordion-section__button {
+    padding-left: 28px;
+  }
+
+  .prices__contact {
+    margin-left: -3px;
+    margin-right: -3px;
+  }
+
+  .prices-contact .heading--xl {
+    font-size: var(--text-xl-prices-contacts-380);
+    line-height: 1.75;
+  }
+
   .prices-contact__button {
     margin: 0 auto;
     max-width: 7.5625rem;
@@ -395,17 +469,11 @@
     line-height: 1.33;
   }
 
-  .prices-contact__image {
-    display: none;
-  }
-
   /* ---------------------contacts--------------------------- */
   .contacts__container {
     padding-top: 25px;
-  }
-
-  .contacts__heading {
-    margin-bottom: 80px;
+    padding-left: 11.05%;
+    padding-right: 11.05%;
   }
 
   .contacts .heading--xl {
@@ -413,16 +481,49 @@
     line-height: 1.28;
   }
 
+  .select-section__button {
+    padding-left: 15px;
+    padding-right: 20px;
+  }
+
   .contacts__select-section {
+    margin-top: 80px;
     margin-bottom: 132px;
+  }
+
+  .contacts__select-section.active {
+    margin-top: 42px;
+    margin-bottom: 294px;
+  }
+
+  .select__address {
+    padding-left: 2.37%;
+    padding-right: 2.37%;
+  }
+
+  .address-select__wrap {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+
+  .address-select__column-wrap {
+    gap: 3.95%;
   }
 
   .contacts__image {
     max-width: 100px;
   }
 
+  .contacts__image.active {
+    display: none;
+  }
+
   .image--contacts {
     aspect-ratio: 100 / 124;
+  }
+
+  .select__address {
+    top: 175px;
   }
 
   /* -----------------footer----------- */
