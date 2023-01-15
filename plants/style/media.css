@@ -6,7 +6,8 @@
   .prices__container,
   .contacts__container,
   .footer__container {
-    padding: 0 calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768)));
+    padding-left: calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768)));
+    padding-right: calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768)));
     /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
   }
 
