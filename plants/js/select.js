@@ -1,4 +1,5 @@
 import Listeners from "./listeners.js";
+import dataSity from "./data-sity.js";
 
 const SELECTORS = {
   SELECT: "[data-select]",
@@ -9,8 +10,11 @@ const SELECTORS = {
   LINK_TEXT: "[data-select-link]",
   ADDRESS: "[data-select-address]",
   ADDRESS_CITY: "[data-address-city]",
+  ADDRESS_PHONE: "[data-address-phone]",
+  ADRESS_STREET: "[data-address-street]",
   IMAGE: "[data-select-image]",
   ADDRESS_BUTTON: "[data-address-button]",
+  CALL_US: "[data-select-call]",
 };
 
 const STATES_SECTION = {
@@ -39,6 +43,8 @@ class Collapse {
     this.linkTexts = this.element.querySelectorAll(SELECTORS.LINK_TEXT);
     this.address = this.element.querySelector(SELECTORS.ADDRESS);
     this.addressCity = this.element.querySelector(SELECTORS.ADDRESS_CITY);
+    this.addressPhone = this.element.querySelector(SELECTORS.ADDRESS_PHONE);
+    this.addressStreet = this.element.querySelector(SELECTORS.ADRESS_STREET);
     this.section = this.element.querySelector(SELECTORS.SECTION);
     this.image = this.element.querySelector(SELECTORS.IMAGE);
     this.addressButton = this.element.querySelector(SELECTORS.ADDRESS_BUTTON);
@@ -67,14 +73,24 @@ class Collapse {
     }
   }
 
-  getListeners() {
-    return (this.listenrs = this._listeners);
+  selectAddress(event) {
+    dataSity.forEach((element) => {
+      if (element.sity == event.target.innerText) {
+        console.log("return", element);
+        this.addressCity.innerText = element.sity;
+        this.addressPhone.innerText = element.phone;
+        this.addressStreet.innerText = element.address;
+        this.addressButton.setAttribute("href", `tel:${element.phone.replace(/\s/g, "")}`);
+      }
+    });
   }
 
   setShowText(event) {
     this.viewText.innerText = event.target.innerText;
-    this.addressCity.innerText = event.target.innerText;
+    // this.addressCity.innerText = event.target.innerText;
     this.closed();
+
+    const address = this.selectAddress(event);
 
     setTimeout(() => this.showAddress(), 500);
   }
@@ -85,12 +101,10 @@ class Collapse {
     this.button.classList.add("active");
     this.section.classList.add("active");
     this.image.classList.add("active");
-    this.addressButton.tabIndex = 0;
   }
 
   hiddenAdress() {
     this.address.classList.remove("active");
-    this.addressButton.tabIndex = -1;
   }
 
   listenersLinks(link) {
@@ -131,6 +145,7 @@ class Collapse {
     this.animation.addEventListener("finish", () => {
       this.animation = null;
       this.state = endState;
+      this.address.classList.toggle("visible-address");
     });
   }
 

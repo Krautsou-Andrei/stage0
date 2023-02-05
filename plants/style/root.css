@@ -68,6 +68,7 @@
   --select-address-text-color-primary: var(--pallete-black);
   --select-address-text-color-secondary: var(--pallete-dove-gray);
 
+  --button-background-color: var(--pallete-gray-nurse);
   --button-background-color-active: var(--pallete-altolame-pea);
   --button-order-background-color: var(--pallete-white);
   --button-order-text-color: var(--pallete-dove-gray);
