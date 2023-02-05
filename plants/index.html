@@ -11,6 +11,8 @@
   <script type="module" src="./js/accordion.js"></script>
   <script type="module" src="./js/select.js"></script>
   <script type="module" src="./js/menu-burger.js"></script>
+  <script type="module" src="./js/data-sity.js"></script>
+  <script type="module" src="./js/service.js"></script>
   <script src="./js/index.js" defer></script>
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="./style/root.css">
@@ -96,24 +98,24 @@
         </div>
 
       </section>
-      <section class="service" id="service">
+      <section class="service" id="service" data-service>
         <div class="service__container container">
           <header class="service__header">
             <h2 class="service__heading heading--xl service-heading--text"><span>Service and our projects</span></h2>
             <div class="service__button service-button">
               <ul class="service-button__list">
                 <li class="service-button__item ">
-                  <button class="button button--service" type="button">
+                  <button class="button button--service" id="serviceGardens" type="button" data-service-button>
                     <span class="button__text">Gardens</span>
                   </button>
                 </li>
                 <li class="service-button__item ">
-                  <button class="button button--service" type="button">
+                  <button class="button button--service" id="serviceLavn" type="button" data-service-button>
                     <span class="button__text">Lawn</span>
                   </button>
                 </li>
                 <li class="service-button__item ">
-                  <button class="button button--service" type="button">
+                  <button class="button button--service" id="servicePlanting" type="button" data-service-button>
                     <span class="button__text ">Planting</span>
                   </button>
                 </li>
@@ -123,7 +125,7 @@
           <div class="service__collection collection"> <!-- заменить на fiedset -->
             <ul class="collection__list" role="none">
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="serviceGardens" data-service-card>
                   <img class="item__image" src="./image/service-1.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -136,7 +138,7 @@
                 </figure>
               </li>
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="servicePlanting" data-service-card>
                   <img class="item__image" src="./image/service-2.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -149,7 +151,7 @@
                 </figure>
               </li>
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="serviceLavn" data-service-card>
                   <img class="item__image" src="./image/service-3.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -162,7 +164,7 @@
                 </figure>
               </li>
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="servicePlanting" data-service-card>
                   <img class="item__image" src="./image/service-4.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -175,7 +177,7 @@
                 </figure>
               </li>
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="serviceGardens" data-service-card>
                   <img class="item__image" src="./image/service-5.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -188,7 +190,7 @@
                 </figure>
               </li>
               <li class="collection__item item">
-                <figure class="item__wrap">
+                <figure class="item__wrap" data-card="servicePlanting" data-service-card>
                   <img class="item__image" src="./image/service-6.jpg" width="330" height="350" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
                   <figcaption class="item__description description">
                     <h3 class="descripton__heading heading--lg">
@@ -230,7 +232,7 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" onclick="document.location='#contacts'" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
@@ -248,12 +250,12 @@
                     </p>
                     <p class="accordion-section__price price">
                       <span class="price__value price-value">
-                        <span class="price-value__abbr">$</span>15
+                        <span class="price-value__abbr">$</span>25
                       </span>
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" onclick="document.location='#contacts'" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
@@ -271,12 +273,12 @@
                     </p>
                     <p class="accordion-section__price price">
                       <span class="price__value price-value">
-                        <span class="price-value__abbr">$</span>15
+                        <span class="price-value__abbr">$</span>35
                       </span>
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" onclick="document.location='#contacts'" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
@@ -331,7 +333,7 @@
               </div>
             </div>
             <div class="select__address address-select">
-              <div class="address-select__wrap" data-select-address>
+              <div class="address-select__wrap visible-address" data-select-address>
                 <div class="address-select__column-wrap">
                   <div class="address-select__column column--title">
                     <span>City:</span>
@@ -340,17 +342,17 @@
                   </div>
                   <div class="address-select__column">
                     <span data-address-city>Canandaigua, NY</span>
-                    <span>+1 585 393 0001</span>
-                    <span>151 Charlotte Street</span>
+                    <span data-address-phone>+1 585 393 0001</span>
+                    <span data-address-street>151 Charlotte Street</span>
                   </div>
                 </div>
 
 
 
                 <div class="address-select__button">
-                  <button class="button address-select--button" type="button" tabindex="-1" data-address-button>
+                  <a class="button address-select--button" href="" data-address-button>
                     <span class="button__text">Call us</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
