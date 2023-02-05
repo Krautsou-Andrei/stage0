@@ -16,10 +16,11 @@
   --pallete-martini: rgb(174, 161, 161);
   --pallete-sage: rgb(139, 160, 126);
   --pallete-willow-brook: rgb(220, 233, 217);
+
   --text-color-default: var(--pallete-black);
   --text-color-primary: var(--pallete-marshland);
   --text-color-primary-active: var(--pallete-white);
-  --text-color-primary-hover: var(--pallete-vida-loca);
+  --text-color-primary-hover: var(--pallete-altolame-pea);
   --text-color-secondary: var(--pallete-altolame-pea);
   --text-color-heading-primary: var(--pallete-dove-gray);
   --text-color-heading-secondary: var(--pallete-altolame-pea);
@@ -49,6 +50,7 @@
   --accordion-border-color: var(--pallete-martini);
   --accordion-border-color-active: var(--pallete-willow-brook);
   --accordion-section-text-color: var(--pallete-dove-gray);
+  --accordion-button-order-text-color: var(--pallete-dove-gray);
 
   --price-abbr-color: var(--pallete-altolame-pea);
   --price-value-color: var(--pallete-altolame-pea);
@@ -62,6 +64,9 @@
   --select-section-text-color: var(--pallete-vida-loca);
   --select-section-text-color-active: var(--pallete-dove-gray);
   --select-section-border-color: var(--pallete-alto);
+  --select-address-border-color: var(--pallete-black);
+  --select-address-text-color-primary: var(--pallete-black);
+  --select-address-text-color-secondary: var(--pallete-dove-gray);
 
   --button-background-color-active: var(--pallete-altolame-pea);
   --button-order-background-color: var(--pallete-white);
@@ -70,8 +75,23 @@
   --box-shadow-primary: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --box-shadow-primary-active: 0px 4px 4px rgba(0, 0, 0, 0);
 
+  --menu-burger-background-color: var(--pallete-gray-nurse);
+  --menu-burger-button-color: var(--pallete-dove-gray);
+
   --text-xxl: 2.8125rem;
   --text-xl: 2.5rem;
   --text-lg: 1.25rem;
   --text-xxl-768: 2.1875rem;
+  --text-xl-768: 2.1875rem;
+  --text-xl-service-768: 1.5625rem;
+  --text-xl-prices-768: 1.5625rem;
+  --text-xl-contacts-768: 2.5rem;
+  --text-xxl-380: 1.5625rem;
+  --text-xl-380: 1.5625rem;
+  --text-xl-prices-380: 1.5625rem;
+  --text-xl-prices-contacts-380: 1.25rem;
+  --text-lg-prices-380: 0.9375rem;
+  --text-xl-contacts-380: 1.5625rem;
+
+  --transition-accordion: all 0.75s ease-in-out;
 }

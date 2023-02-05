@@ -7,11 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <script type="module" src="./js/listeners.js"></script>
+  <script type="module" src="./js/accordion.js"></script>
+  <script type="module" src="./js/select.js"></script>
+  <script type="module" src="./js/menu-burger.js"></script>
   <script src="./js/index.js" defer></script>
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="./style/root.css">
+  <link rel="stylesheet" href="./style/menu-burger.css">
   <link rel="stylesheet" href="./style.css">
-  <!-- <link rel="stylesheet" href="./style/media.css"> -->
+  <link rel="stylesheet" href="./style/media.css">
   <title>Plants</title>
 </head>
 
@@ -29,30 +34,49 @@
         </div>
       </a>
       <nav class="header__menu menu">
-        <ul class="menu__list">
-          <li class="menu__item"><a class="menu__link link link--home" href="#">Home</a></li>
+        <ul class="menu__list" role="list">
+          <li class="menu__item"><a class="menu__link link" href="#">Home</a></li>
           <li class="menu__item"><a class="menu__link link" href="#about">About us</a></li>
           <li class="menu__item"><a class="menu__link link" href="#service">Service</a></li>
           <li class="menu__item"><a class="menu__link link" href="#price">Price</a></li>
           <li class="menu__item"><a class="menu__link link" href="#contacts">Contacts</a></li>
         </ul>
+
       </nav>
+      <div class="menu-burger__wrap" data-menu-burger>
+        <button class="menu-burger__button menu-burger-button" type="button" aria-expanded="false" data-menu-burger-button>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="header__menu menu-burger" inert data-menu-burger-content>
+          <ul class="menu-burger__list" role="list">
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#" data-menu-burger-link>Home</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#about" data-menu-burger-link>About us</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#service" data-menu-burger-link>Service</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#price" data-menu-burger-link>Price</a></li>
+            <li class="menu-burger__item"><a class="menu-burger__link link menu-burger--link-text" href="#contacts" data-menu-burger-link>Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="main" class="main ">
     <div class="main__container ">
       <section class="welcome" id="welcome">
         <div class="welcome__container container">
-          <div class="welcome__image image">
-            <img class="image__welcome" src="./image/leafs.jpg" width="448" height="407" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+          <div class="welcome__image image ">
+            <img class="image__media image--welcome" src="./image/leafs.jpg" width="448" height="407" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
           </div>
           <div class="welcome__description description">
-            <h1 class="description__heading heading--xxl welcom--description-text">We lorem grow <span>plants</span> and give you oxygen</h1>
+            <h1 class="description__heading heading--xxl welcom--description-text">We grow <span>plants</span> and give you oxygen</h1>
             <p class="description__text text--description">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
             </p>
-            <div class="description__button button">
-              <a class="button__text button__link button--welcome" href="#"><span>Learn more</span></a>
+            <div class="description__button-welcome ">
+              <button class="button button--welcome" type="button">
+                <span class="button__text">Learn more</span>
+              </button>
+
             </div>
           </div>
         </div>
@@ -60,14 +84,14 @@
       <section class="about" id="about">
         <div class="about__container container">
           <div class="about__description description ">
-            <h2 class="description__heading heading--xl about--description-text"><span>We are </span>professional experienced<span> gardeners</span></h2>
+            <h2 class="description__heading heading--xl about--heading-text"><span>We are </span>professional experienced<span> gardeners</span></h2>
             <p class="description__text text--description text--about">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
               specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
           <div class="about__image image">
-            <img class="image__about" src="./image/houseplant-1.jpg" width="464" height="469" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+            <img class="image__media image--about" src="./image/houseplant-1.jpg" width="464" height="469" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
           </div>
         </div>
 
@@ -78,20 +102,20 @@
             <h2 class="service__heading heading--xl service-heading--text"><span>Service and our projects</span></h2>
             <div class="service__button service-button">
               <ul class="service-button__list">
-                <li class="service-button__item button">
-                  <a class="service-button__link button__link button--service" href="#">
-                    <span>Gardens</span>
-                  </a>
+                <li class="service-button__item ">
+                  <button class="button button--service" type="button">
+                    <span class="button__text">Gardens</span>
+                  </button>
                 </li>
-                <li class="service-button__item button">
-                  <a class="service-button__link button__link button--service" href="#">
-                    <span>Lawn</span>
-                  </a>
+                <li class="service-button__item ">
+                  <button class="button button--service" type="button">
+                    <span class="button__text">Lawn</span>
+                  </button>
                 </li>
-                <li class="service-button__item button">
-                  <a class="service-button__link button__link button--service" href="#">
-                    <span>Planting</span>
-                  </a>
+                <li class="service-button__item ">
+                  <button class="button button--service" type="button">
+                    <span class="button__text ">Planting</span>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -183,18 +207,19 @@
       </section>
       <section class="prices" id="price">
         <div class="prices__container container">
-          <fieldset class="prices__fieldset fieldset-prices" id="fieldset-prices">
-            <legend class="fieldset-prices__legend heading--xl prices--description-text">Prices</legend>
-            <div class="fieldset-prices__accordion accordion">
-              <div class="fieldset-prices__accordion-section accordion__section accordion-section" tabindex="0"><!--Удалить tabindex, после добавления js для аккордеона-->
+
+          <div class="accordion-wrap">
+            <h2 class="prices__heading heading--xl prices--heading-text">Prices</h2>
+            <div class="prices__accordion accordion" data-accordion>
+              <div class="prices__accordion-section accordion__section accordion-section" data-accordion-section>
                 <h3 class="accordion-section__heading heading--lg">
-                  <button class="accordion-section__button accordion-button button--accordion" id="accordion1id" type="button" aria-expanded="false" aria-controls="sect1" tabindex="-1"><!--Удалить tabindex, после добавления js для аккордеона-->
+                  <button class="accordion-section__button accordion-button button--accordion" id="accordion1id" type="button" aria-expanded="false" aria-controls="sect1" data-accordion-button>
                     <span>Basics</span>
                     <span class="button__arrow"></span>
                   </button>
                 </h3>
                 <div class="accordion-section__content" id="sect1" role="region" aria-labelledby="accordion1id">
-                  <div class="accordion-content-wrap">
+                  <div class="accordion-content-wrap" data-accordion-content>
                     <p class="accordion-section__text">
                       Release of Letraset sheets containing Lorem Ipsum passages, and more recently
                     </p>
@@ -205,19 +230,19 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
-              <div class="fieldset-prices__accordion-section accordion__section accordion-section" tabindex="0"><!--Удалить tabindex, после добавления js для аккордеона-->
+              <div class="fieldset-prices__accordion-section accordion__section accordion-section" data-accordion-section>
                 <h3 class="accordion-section__heading heading--lg">
-                  <button class="accordion-section__button accordion-button button--accordion " id="accordion2id" type="button" aria-expanded="false" aria-controls="sect2" tabindex="-1"><!--Удалить tabindex, после добавления js для аккордеона-->
-                    <span>Standart</span>
+                  <button class="accordion-section__button accordion-button button--accordion " id="accordion2id" type="button" aria-expanded="false" aria-controls="sect2" data-accordion-button>
+                    <span>Standard</span>
                     <span class="button__arrow"></span>
                   </button>
                 </h3>
                 <div class="accordion-section__content" id="sect2" role="region" aria-labelledby="accordion2id">
-                  <div class="accordion-content-wrap">
+                  <div class="accordion-content-wrap" data-accordion-content>
                     <p class="accordion-section__text">
                       Release of Letraset sheets containing Lorem Ipsum passages, and more recently
                     </p>
@@ -228,19 +253,19 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
-              <div class="fieldset-prices__accordion-section accordion__section accordion-section" tabindex="0"><!--Удалить tabindex, после добавления js для аккордеона-->
+              <div class="fieldset-prices__accordion-section accordion__section accordion-section" data-accordion-section>
                 <h3 class="accordion-section__heading heading--lg">
-                  <button class="accordion-section__button accordion-button button--accordion" id="accordion3id" type="button" aria-expanded="false" aria-controls="sect3" tabindex="-1"><!--Удалить tabindex, после добавления js для аккордеона-->
+                  <button class="accordion-section__button accordion-button button--accordion" id="accordion3id" type="button" aria-expanded="false" aria-controls="sect3" data-accordion-button>
                     <span>Pro care</span>
                     <span class="button__arrow"></span>
                   </button>
                 </h3>
                 <div class="accordion-section__content" id="sect3" role="region" aria-labelledby="accordion3id">
-                  <div class="accordion-content-wrap">
+                  <div class="accordion-content-wrap" data-accordion-content>
                     <p class="accordion-section__text">
                       Release of Letraset sheets containing Lorem Ipsum passages, and more recently
                     </p>
@@ -251,16 +276,18 @@
                       <span class="price__slash"></span>
                       <span class="price__description">per hour</span>
                     </p>
-                    <button class="accordion-section__button-order button-order" type="button">Order</button>
+                    <button class="accordion-section__button-order button-order" type="button" tabindex="-1" data-order-button>Order</button>
                   </div>
                 </div>
               </div>
             </div>
-          </fieldset>
+          </div>
           <div class="prices__contact prices-contact">
-            <h2 class="prices__heading heading--xl prices--description-text">Our best <span>gardeners</span> are ready to help you</h2>
-            <div class="prices-contact__button button">
-              <a class="button__text button__link prices--button-text button--prices" href="#contacts"><span>Contact us</span></a>
+            <h3 class="prices-contact__heading heading--xl prices-contact--heading-text">Our best <span>gardeners</span> are ready to help you</h3>
+            <div class="prices-contact__button ">
+              <button class="button button--prices" type="button">
+                <span class="button__text">Contact us</span>
+              </button>
             </div>
             <div class="prices-contact__image image">
               <img class="image__prices-contact" src="./image/leafs-prices.jpg" width="152" height="175" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
@@ -270,43 +297,65 @@
       </section>
 
       <section class="contacts" id="contacts">
-        <div class="contacts__container container">
-          <div class="contacts__image image">
-            <img class="image__contacts" src="./image/contact_woman.jpg" width="400" height="497" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
+        <div class="contacts__container container" data-select>
+
+          <div class="contacts__image image" data-select-image>
+            <img class="image__media image--contacts" src="./image/contact_woman.jpg" width="400" height="497" alt=""> <!--Нет значения в атрибуте alt потому, что это не контекстаная картинка, она не несет никакой информации, кроме декоративной -->
           </div>
-          <h2 class="contacts__heading heading--xl contacts--heading-text">Contact us</h2>
-          <fieldset class="contacts__fieldset fieldset-contacts" id="fieldset-contacts">
-            <legend class="fieldset-contacts__legend visually-hidden">Select sity</legend>
-            <div class="fieldset-contacts__select select">
-              <div class="fieldset-contacts__select-section select__section select-section">
-                <h3 class="select-section__heading heading--lg heading--contacts-select-section" tabindex="0"><!--Удалить tabindex, после добавления js для select-->
-                  <button class="select-section__button select-button  button--contacts" id="select1id" type="button" aria-expanded="false" aria-controls="select-sect1">
-                    <span class="select-button__text">City</span>
-                    <span class="button__arrow"></span>
-                  </button>
-                </h3>
+
+
+          <div class="contacts__select select">
+            <h2 class="contacts__heading heading--xl contacts--heading-text">Contact us</h2>
+            <div class="contacts__select-section select__section select-section" data-select-section>
+              <h3 class="select-section__heading heading--lg heading--contacts-select-section">
+                <button class="select-section__button select-button  button--contacts" id="select1id" type="button" aria-expanded="false" aria-controls="select-sect1" data-select-button>
+                  <span class="select-button__text" data-select-view-text>City</span>
+                  <span class="button__arrow"></span>
+                </button>
+              </h3>
+              <div class="select-content-wrap" data-select-content>
                 <ul class="select-section__list" id="select-sect1" aria-labelledby="select1id">
                   <li class="select-section__item">
-                    <p class="select-section__text">Canandaigua, NY</p>
+                    <p class="select-section__text" data-select-link>Canandaigua, NY</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">New York City</p>
+                    <p class="select-section__text" data-select-link>New York City</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">Yonkers, NY</p>
+                    <p class="select-section__text" data-select-link>Yonkers, NY</p>
                   </li>
                   <li class="select-section__item">
-                    <p class="select-section__text">Sherrill, NY</p>
+                    <p class="select-section__text " data-select-link>Sherrill, NY</p>
                   </li>
-
-
-
-
-
                 </ul>
               </div>
             </div>
-          </fieldset>
+            <div class="select__address address-select">
+              <div class="address-select__wrap" data-select-address>
+                <div class="address-select__column-wrap">
+                  <div class="address-select__column column--title">
+                    <span>City:</span>
+                    <span>Phone:</span>
+                    <span>Office adress:</span>
+                  </div>
+                  <div class="address-select__column">
+                    <span data-address-city>Canandaigua, NY</span>
+                    <span>+1 585 393 0001</span>
+                    <span>151 Charlotte Street</span>
+                  </div>
+                </div>
+
+
+
+                <div class="address-select__button">
+                  <button class="button address-select--button" type="button" tabindex="-1" data-address-button>
+                    <span class="button__text">Call us</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>

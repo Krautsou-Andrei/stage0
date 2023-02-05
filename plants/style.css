@@ -137,7 +137,7 @@ body {
 }
 
 .container {
-  max-width: var(--width); /*заменить на max-width, для адаптива*/
+  max-width: var(--width);
   margin: 0 auto;
 }
 
@@ -150,33 +150,30 @@ body {
 .footer__container {
   padding-left: 109px;
   padding-right: 109px;
-  /* padding: 0 calc(50px + (109 - 50) * ((100vw - 768px) / (1440 - 768))); */
-  /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения padding-left, padding-right*/
 }
 
 .about__container,
 .welcome__container,
-.prices__container {
+.prices__container,
+.contacts__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* gap: 14rem; */
-  /* gap: calc(42px + (224 - 42) * ((100vw - 768px) / (1440 - 768))); */
-  /*calc (конечное значение в px + (начальное значение - конечное значение) * ((реальны размер экрана в vw - конечный размер экрана в px) / (размер контейнера - конечный размер экрана)))  это для адаптивного изменения растояния между объектами*/
+  gap: 42px;
 }
 
 .welcome__image,
 .welcome__description,
 .about__description,
 .about__image,
-.prices__fieldset,
+.accordion-wrap,
 .prices__contact {
   flex: 1;
 }
 
 .description__heading span,
 .service__heading span,
-.prices__heading span {
+.prices-contact__heading span {
   color: var(--text-color-heading-inner);
 }
 
@@ -207,67 +204,54 @@ body {
 
 /* -------------------------button------------------------------ */
 .button {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
+  min-height: inherit;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* box-shadow: var(--box-shadow-primary); */
   border: 2px solid var(--border-color-primary);
-  border-radius: 0.625rem;
+  border-radius: 10px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   color: var(--text-color-primary-active);
   background-color: var(--button-background-color-active);
+}
 
-  /* border: 1px solid var(--button-border-color-active); */
+.button:hover .button__text {
+  color: var(--text-color-primary-active);
 }
 
 .button:active {
   box-shadow: var(--box-shadow-primary);
 }
-.button__link {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button__link span {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 
 .button__text {
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1;
   font-weight: 400;
   text-transform: uppercase;
   color: var(--text-color-button);
-}
-
-.button__text:hover {
-  background-color: var(--button-background-color-active);
-  color: var(--text-color-primary-active);
+  transition: all 0.3s;
 }
 
 /* ------------------------header--------------------------- */
 
 .header__container {
-  padding-top: 2.625rem; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
-  padding-bottom: 2.625rem;
+  padding-top: 42px;
+  padding-bottom: 42px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 1rem;
+  column-gap: 16px;
 
   background-color: var(--background-color-primary);
 }
@@ -300,30 +284,20 @@ body {
 .menu {
   font-family: "Inika";
   font-size: 1rem;
-  line-height: 3.125; /*Больше двух знаков потому, что размер указан не в px а в rem, будет большая разница с макетом  */
+  line-height: 3.125;
   font-weight: 400;
 }
 
 .menu__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.875rem;
-}
-
-.menu__item {
-  max-width: 6.25rem;
-  max-height: 3.125rem;
-  /* overflow: hidden; */
-}
-
-.link--home {
-  font-weight: 700;
-  color: var(--text-color-secondary);
+  column-gap: 46px;
 }
 
 .link-rrs:hover,
 .link:hover {
   color: var(--text-color-primary-hover);
+  text-shadow: 0 0 0.75px var(--text-color-primary-hover), 0 0 0.75px var(--text-color-primary-hover);
 }
 
 .link:active {
@@ -332,29 +306,41 @@ body {
 }
 
 /* -------------------------------welcome------------------------- */
+.welcome__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 42px;
+}
 
 .welcome__container {
-  padding-top: 3.875rem;
-  padding-bottom: 3.875rem;
+  padding-top: 62px;
+  padding-bottom: 62px;
 }
 
 .welcome__image {
+  max-width: 449px;
+  height: auto;
   mix-blend-mode: multiply;
 }
 
-.image {
-  max-width: 28rem;
+.image__media {
+  width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.image--welcome {
+  aspect-ratio: 449 / 407;
 }
 
 .welcome__description {
-  max-width: 34.3125rem;
+  max-width: 549px;
 }
 
-.description__heading {
-  margin-top: 2.25rem;
-  margin-bottom: 2.625rem;
-  max-width: 34.3125rem;
+.welcome .description__heading {
+  margin-top: 36px;
+  margin-bottom: 42px;
 }
 
 .welcom--description-text {
@@ -362,8 +348,7 @@ body {
 }
 
 .description__text {
-  margin-bottom: 3rem;
-  max-width: 37.8125rem;
+  margin-bottom: 48px;
 }
 
 .text--description {
@@ -372,31 +357,43 @@ body {
   font-weight: 400;
   color: var(--text-color-description);
 }
-.description__button {
+
+.description__button-welcome {
+  min-height: 2.75rem;
   width: 9.875rem;
   max-width: 100%;
-
-  /* overflow: hidden; */
-}
-
-.button--welcome {
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
 }
 
 /* -----------------------------about----------------------- */
 
 .about__container {
-  padding-top: 5.8125rem;
-  padding-bottom: 5.875rem;
-  /* gap: 5rem; */
+  padding-top: 93px;
+  padding-bottom: 94px;
+  align-items: center;
+  gap: 40px;
+}
+
+.about__description {
+  max-width: 605px;
 }
 
 .about__image {
+  max-width: 464px;
+  height: auto;
   mix-blend-mode: multiply;
 }
 
-.about--description-text {
+.image--about {
+  aspect-ratio: 464 / 479;
+  object-fit: cover;
+}
+
+.about .description__heading {
+  margin-bottom: 40px;
+  max-width: 463px;
+}
+
+.about--heading-text {
   font-family: "Inika";
   color: var(--text-color-heading-secondary);
 }
@@ -408,24 +405,22 @@ body {
 /* ------------------service------------------------ */
 
 .service__container {
-  padding-top: 2.5rem;
-  padding-bottom: 7.5625rem;
+  padding-top: 40px;
+  padding-bottom: 121px;
 }
 
 .service__header {
-  margin-bottom: 5.625rem;
+  margin-bottom: 80px; /* на макете 90, изменено из-за line-header, в макете не правильно указан*/
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 8.875rem;
-  row-gap: 2.25rem;
+  column-gap: 142px;
+  row-gap: 40px;
 }
 
 .service__heading {
-  max-width: 19.125rem;
-  max-height: 6.5rem;
-  /* overflow: hidden; */
+  max-width: 306px;
 }
 
 .service-heading--text {
@@ -434,43 +429,40 @@ body {
 
 .service-button__list {
   display: flex;
-  gap: 2.375rem;
+  column-gap: 38px;
 }
 
 .service-button__item {
-  width: 9.875rem;
-
-  border-radius: 0.3125rem;
-  border: 1px solid var(--border-color-primary);
-
-  /* overflow: hidden; */
+  width: 10.0625rem;
+  min-height: 3.125rem;
+  max-width: 100%;
 }
 
 .button--service {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-
-  font-family: "inika";
+  border-radius: 5px;
+  border: 1px solid var(--border-color-primary);
 }
 
-.service-button__link {
+.service .button__text {
+  font-family: "inika";
   font-size: 1.25rem;
   line-height: 1.3;
   font-weight: 400;
+  text-transform: unset;
 
   color: var(--text-color-secondary);
 }
 
-.service-button__link:hover {
-  color: var(--text-color-primary-active);
-}
-
 .collection__list {
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, max(330px));
-  row-gap: 3.4375rem;
-  column-gap: 7.25rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  row-gap: 55px;
+  column-gap: 117px;
+}
+
+.collection__item {
+  max-width: 329px;
 }
 
 .item:active {
@@ -481,7 +473,11 @@ body {
 .item__wrap {
   position: relative;
   /* filter: blur(2px); */
-  /* overflow: hidden; */
+}
+
+.item__image {
+  aspect-ratio: 329 /350;
+  object-fit: cover;
 }
 
 .item__wrap:active,
@@ -492,13 +488,12 @@ body {
 }
 
 .item__image {
-  border-radius: 1.25rem 1.25rem 0px 0px;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .item__description {
-  padding-top: 0.625rem;
-  padding-bottom: 2.25rem;
-  padding-right: 0.5rem;
+  padding-top: 10px;
+  padding-bottom: 36px;
 
   text-align: center;
 
@@ -508,7 +503,12 @@ body {
 }
 
 .descripton__heading {
-  margin-bottom: 0.625rem;
+  margin-bottom: 14px; /*на макете 10px*/
+}
+
+.collection .description__text {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .description__link {
@@ -526,140 +526,86 @@ body {
 
 /* -----------------------prices-------------------------- */
 .prices__container {
-  padding-top: 2.5rem;
-  padding-bottom: 7.1875rem;
+  padding-top: 40px;
+  padding-bottom: 115px;
 }
 
-.fieldset-prices__legend {
-  margin-bottom: 3.75rem;
+.prices__heading {
+  margin-bottom: 60px;
 }
 
-.fieldset-prices__accordion {
-  padding-top: 2.125rem;
-  padding-right: 2.5625rem;
-  padding-bottom: 3.75rem;
-  padding-left: 2.5625rem;
+.prices--heading-text {
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-  max-width: 20.75rem;
+.prices__accordion {
+  padding: 34px 41px;
+
+  max-width: 332px;
 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 32px;
   justify-content: center;
 }
 
 .accordion {
   border: 1px solid var(--border-color-secondary);
-  border-radius: 1.25rem;
-}
-
-.fieldset-prices__accordion-section {
-  max-width: 15.625rem;
+  border-radius: 20px;
 }
 
 .accordion-section__heading {
-  width: 100%;
+  /* width: 250px; */
+  max-width: 250px;
+  min-height: 50px;
 }
 
 .accordion-section__button {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .accordion-button {
   position: relative;
 
   width: 100%;
+  min-height: inherit;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  border-radius: 1.25rem;
+  border-radius: 20px;
   border: 1px solid var(--background-color-primary);
   background: var(--accordion-button-background-color);
-  /* overflow: hidden; */
-  transition: all 1s ease;
+
+  transition: var(--transition-accordion);
 }
 
-.accordion-section:active .accordion-button,
-.accordion-section:focus .accordion-button {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
+.accordion-button[aria-expanded="true"] {
   background-color: var(--accordion-button-background-color-active);
   border-color: var(--accordion-border-color-active);
-  border-radius: 1.25rem 1.25rem 0 0;
 }
-
-/*
-разкоментировать после подключения js
-.accordion-button:active,
-.accordion-button:focus {
-  
-  background-color: var(--accordion-button-background-color-active);
-  border-color: var(--accordion-border-color-active);
-  border-radius: 1.25rem 1.25rem 0 0;
-}*/
-
-.accordion-section:active .accordion-button .button__arrow,
-.accordion-section:focus .accordion-button .button__arrow {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
-  background-color: var(--accordion-arrow-background-color-primary-active);
-}
-
-/*
-разкоментировать после подключения js
-.accordion-button:active .button__arrow,
-.accordion-button:focus .button__arrow {
-  background-color: var(--accordion-arrow-background-color-primary-active);
-}
-*/
-
-.accordion-section:active .accordion-button .button__arrow::after,
-.accordion-section:focus .accordion-button .button__arrow::after {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
-  border-color: var(--accordion-arrow-color-active);
-  transform: translate(-20%, -50%) rotate(45deg);
-}
-
-/*
-разкоментировать после подключения js
-.accordion-button:active .button__arrow::after,
-.accordion-button:focus .button__arrow::after {
-  transform: translate(-20%, -50%) rotate(45deg);
-}
-*/
-
-.accordion-section:active .accordion-button .button__arrow::before,
-.accordion-section:focus .accordion-button .button__arrow::before {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
-  border-color: var(--accordion-arrow-color-active);
-  background-color: var(--accordion-arrow-background-color-primary-active);
-  transform: translate(20%, -50%) rotate(-45deg);
-}
-
-/*
-разкоментировать после подключения js
-.accordion-button:active .button__arrow::before,
-.accordion-button:focus .button__arrow::before {
-  background-color: var(--accordion-arrow-background-color-primary-active);
-  transform: translate(20%, -50%) rotate(-45deg);
-}
-*/
 
 .button--accordion {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   line-height: 1;
 }
 
 .button__arrow {
   position: relative;
 
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
 
   border-radius: 50%;
   background-color: var(--accordion-arrow-background-color-primary);
+
+  transition: var(--transition-accordion);
+}
+
+.accordion-button[aria-expanded="true"] .button__arrow {
+  background-color: var(--accordion-arrow-background-color-primary-active);
 }
 
 .button__arrow::before {
@@ -669,77 +615,46 @@ body {
   top: 50%;
   right: 50%;
 
-  width: 0.3125rem;
-  height: 0.03125rem;
+  width: 3px;
+  height: 3px;
 
-  border: 0.03125rem solid var(--accordion-arrow-color);
-  transform: translate(20%, -50%) rotate(45deg);
+  border: 1px solid var(--accordion-arrow-color);
+  border-top: none;
+  border-right: none;
+  transform: translate(50%, -75%) rotate(-45deg);
 
-  transition: all 0.3s;
+  transition: var(--transition-accordion);
 }
 
-.button__arrow::after {
-  content: "";
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 0.3125rem;
-  height: 0.03125rem;
-
-  border: 0.03125rem solid var(--accordion-arrow-color);
-  transform: translate(-20%, -50%) rotate(-45deg);
-
-  transition: all 0.3s;
+.accordion-button[aria-expanded="true"] .button__arrow::before {
+  border-color: var(--accordion-arrow-color-active);
+  transform: translate(50%, -25%) rotate(135deg);
 }
 
 .accordion-section__content {
-  padding-right: 2.5rem;
-  padding-left: 2.5rem;
+  z-index: -1;
+
+  position: relative;
+  margin-top: -30px;
+  padding-top: 30px;
+  padding-right: 40px;
+  padding-left: 40px;
 
   border-radius: 0 0 1.25rem 1.25rem;
+  background-color: var(--accordion-button-background-color);
+
+  transition: var(--transition-accordion);
+}
+
+.accordion-section__content:has(.accordion-active) {
   background-color: var(--accordion-background-color);
 }
 
-.accordion-content-wrap {
-  height: 0; /*для работы скрытия select без js, удалить после подключения js*/
-
-  overflow: hidden; /*для работы скрытия select без js, удалить после подключения js*/
-  transition: all 1s ease; /*для работы скрытия select без js, удалить после подключения js*/
-}
-
-.accordion-section:active .accordion-content-wrap,
-.accordion-section:focus .accordion-content-wrap {
-  height: 110px; /*для работы скрытия select без js, удалить после подключения js*/
-}
-
-.accordion-section {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
-  position: relative;
-}
-
-.accordion-section::before {
-  /*удалить после подключения ls. это временное совйство для работы аккордеона.*/
-  content: "";
-  display: block;
-  position: absolute;
-
-  top: 0;
-  left: auto;
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 10;
-  cursor: pointer;
-}
-
 .accordion-section__text {
-  margin-bottom: 0.375rem;
+  margin-bottom: 6px;
 
   border-top: 1px solid var(--accordion-border-color);
-  padding-top: 0.375rem;
+  padding-top: 6px;
 
   font-size: 0.625rem;
   line-height: 1;
@@ -749,11 +664,11 @@ body {
 }
 
 .accordion-section__price {
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 }
 
 .accordion-section__button-order {
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 }
 
 .price__value {
@@ -797,9 +712,9 @@ body {
 }
 
 .button-order {
-  width: 5.375rem;
+  width: 86px;
   max-width: 100%;
-  min-height: 1.5625rem;
+  min-height: 25px;
 
   font-weight: 700;
   font-size: 0.875rem;
@@ -808,38 +723,33 @@ body {
   border-radius: 10px;
 
   background: var(--button-order-background-color);
-  color: #717171;
+  color: var(--accordion-button-order-text-color);
 }
 
-.prices-contact {
+.prices__contact {
   text-align: right;
+  max-width: 452px;
 }
 
-.prices-contact__image {
-  mix-blend-mode: multiply;
+.prices-contact__heading {
+  margin-bottom: 38px;
 }
 
-.prices__heading {
-  margin-bottom: 2.375rem;
-}
-
-.prices--description-text {
+.prices-contact--heading-text {
   font-weight: 700;
   color: var(--text-color-default);
 }
 
 .prices-contact__button {
-  margin-bottom: 2.375rem;
+  margin-bottom: 39px;
   margin-left: auto;
 
-  width: 10.125rem;
+  width: 162px;
   max-width: 100%;
-
-  border-radius: 0.3125rem;
-  border: 1px solid var(--border-color-primary);
+  min-height: 50px;
 }
 
-.prices--button-text {
+.prices-contact .button__text {
   font-size: 1.25rem;
   line-height: 1.3;
   font-weight: 700;
@@ -848,39 +758,44 @@ body {
 }
 
 .button--prices {
-  padding-top: 0.75rem;
-  padding-bottom: 0.7rem;
-
+  border-radius: 5px;
+  border: 1px solid var(--border-color-primary);
   font-family: "Inika";
 }
 
 .prices-contact__image {
   margin-left: auto;
+  max-width: 152px;
 
-  max-width: 9.5rem;
-  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.image__prices-contact {
+  aspect-ratio: 152 /175;
+  object-fit: cover;
 }
 
 /* ---------------------contacts--------------------------- */
 .contacts__container {
-  padding-top: 3.3125rem;
-
+  padding-top: 53px;
   position: relative;
 
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  column-gap: 1rem;
+  column-gap: 16px;
 }
 
 .contacts__image {
+  max-width: 400px;
   mix-blend-mode: multiply;
+}
+
+.image--contacts {
+  aspect-ratio: 400 / 496;
 }
 
 .contacts__heading {
   position: absolute;
-  margin: 0 auto;
-  top: 3.75rem;
+
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -891,40 +806,88 @@ body {
   color: var(--text-color-heading-inner);
 }
 
-.contacts__fieldset {
-  padding-top: 5.9375rem;
-  width: 28.125rem;
+.contacts__select {
+  /* position: relative; */
+  padding-top: 95px;
+  width: 450px;
   max-width: 100%;
 }
 
-.fieldset-contacts__select-section {
-  margin-bottom: 1rem;
+.contacts__select-section {
+  position: relative;
+  margin-bottom: 47px;
   width: 100%;
+}
+
+.select-content-wrap {
+  width: 100%;
+  position: absolute;
+}
+
+.select-section__heading {
+  width: 100%;
+  min-height: 50px;
+}
+
+.select-section__button {
+  padding-left: 20px;
+  padding-right: 35px;
+}
+.select-button {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-height: inherit;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--text-color-heading-primary);
+}
+
+.select-button__text {
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.select-button__text.active {
+  font-size: 1rem;
+  line-height: 2.5;
+}
+
+.button--contacts {
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  background-color: var(--accordion-background-color);
+  box-shadow: var(--box-shadow-primary);
+
+  transition: all 1s;
+}
+
+.button--contacts .button__arrow {
+  background-color: var(--select-arrow-background-color-secondary);
+}
+
+.button--contacts .button__arrow::before {
+  border-color: var(--accordion-arrow-color-active);
 }
 
 .select-section__list {
-  padding: 0; /*для работы скрытия select без js, удалить после подключения js*/
-
-  height: 0; /*для работы скрытия select без js, удалить после подключения js*/
-  width: 100%;
-
+  padding-top: 15px;
+  padding-bottom: 19px;
   background-color: var(--select-section-value-background-color);
-  /* 
-  Разкомментировать после подключения js
-  padding-top: 0.9375rem; 
-  padding-bottom: 1.1875rem; */
-
-  overflow: hidden; /*для работы скрытия select без js, удалить после подключения js*/
-  transition: all 1s ease; /*для работы скрытия select без js, удалить после подключения js*/
 }
 
 .select-section__item {
-  padding-left: 2.1875rem;
-  padding-right: 2.1875rem;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .select-section__item + .select-section__item {
-  padding-bottom: 0.75rem;
+  padding-bottom: 12px;
 }
 
 .select-section__item:hover .select-section__text {
@@ -942,147 +905,133 @@ body {
   color: var(--select-section-text-color);
 }
 
-.select-section__heading {
-  position: relative; /*для работы скрытия select без js, удалить после подключения js*/
+.select-button[aria-expanded="true"] .button__arrow::before {
+  background-color: var(--accordion-arrow-background-color-primary-active);
+  transform: translate(50%, -25%) rotate(135deg);
 }
 
-.select-section__heading::before {
-  /*для работы скрытия select без js, удалить после подключения js*/
-
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: auto;
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 10;
-  cursor: pointer;
+.select-button[aria-expanded="true"] {
+  box-shadow: var(--box-shadow-primary-active);
+  background-color: var(--select-background-color-active);
+  border: 1px solid var(--select-border-color-active);
 }
 
-.select-section__heading:active + .select-section__list,
-.select-section__heading:focus + .select-section__list {
-  /*для работы скрытия select без js, удалить после подключения js*/
-  height: 234px;
-  padding-top: 0.9375rem;
-  padding-bottom: 1.1875rem;
+.select-button.active {
+  box-shadow: none;
+  background-color: var(--select-background-color-active);
+  border: 1px solid var(--select-border-color-active);
 }
 
-.select-section__button {
-  padding-left: 1.25rem;
-  padding-right: 2.1875rem;
+.select-button[aria-expanded="true"] .button__arrow {
+  background-color: var(--select-arrow-background-color-secondary-active);
 }
-.select-button {
-  width: 100%;
+/* ----------------------------------------------------------------------------- */
 
+.select__address.active {
+  height: 214px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.address-select__wrap {
+  padding-top: 17px;
+  padding-right: 33px;
+  padding-bottom: 32px;
+  padding-left: 33px;
+  border: 1px solid var(--select-address-border-color);
+  border-radius: 20px;
+  height: 0px;
+
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.7s opacity, 0.7s height;
+}
+.address-select__wrap.active {
+  height: 214px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.address-select__column-wrap {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: var(--text-color-heading-primary);
+  column-gap: 15px;
+  margin-bottom: 28px;
 }
 
-.select-button__text {
-  line-height: 2;
-  font-weight: 400;
+.address-select__column {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  line-height: 2.5rem;
   letter-spacing: 0.05em;
+  color: var(--select-address-text-color-secondary);
 }
 
-.button--contacts {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-
-  border: 1px solid transparent;
-  border-radius: 0;
-
-  background-color: var(--accordion-background-color);
-  box-shadow: var(--box-shadow-primary);
-
-  transition: all 0.3s;
+.address-select__column span:nth-of-type(1),
+.address-select__column span:nth-of-type(2) {
+  white-space: nowrap;
+}
+.address-select__column span:nth-of-type(3) {
+  padding-top: 10px;
+  line-height: 1.25;
 }
 
-.button--contacts .button__arrow {
-  background-color: var(--select-arrow-background-color-secondary);
+.column--title {
+  color: var(--select-address-text-color-primary);
 }
 
-.button--contacts .button__arrow::after {
-  border: 0.03125rem solid var(--accordion-arrow-color-active);
+.address-select__button {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 7.625rem;
+  max-width: 100%;
+  min-height: 1.625rem;
 }
 
-.button--contacts .button__arrow::before {
-  border: 0.03125rem solid var(--accordion-arrow-color-active);
+.address-select--button {
+  border-width: 1px;
+  border-radius: 5px;
 }
 
-.select-section__heading:active .button__arrow::after,
-.select-section__heading:focus .button__arrow::after {
-  /*удалить после подключения js*/
-  transform: translate(-20%, -50%) rotate(45deg);
+.address-select .button__text {
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 1.3;
+  text-transform: unset;
 }
 
-/* 
-Разкомментировать после подключения js
-.select-button:active .button__arrow::after,
-.select-button:focus .button__arrow::after {
-  transform: translate(-20%, -50%) rotate(45deg);
+/* .address-select__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-bottom: 24px;
+}
+
+.address-select__item {
+  display: flex;
+
+  font-size: 1rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.05em;
+  color: var(--select-address-text-color-secondary);
+  word-wrap: break-word;
 } */
+/* .address-select__item span:nth-of-type(1) {
+  max-width: 128px;
 
-.select-section__heading:active .button__arrow::before,
-.select-section__heading:focus .button__arrow::before {
-  /*удалмть после подключения js*/
-  background-color: var(--accordion-arrow-background-color-primary-active);
-  transform: translate(20%, -50%) rotate(-45deg);
-}
+  color: var(--select-address-text-color-primary);
 
-/* 
-Разкомментировать после подключения js
-.select-button:active .button__arrow::before,
-.select-button:focus .button__arrow::before {
-  background-color: var(--accordion-arrow-background-color-primary-active);
-  transform: translate(20%, -50%) rotate(-45deg);
 }
-*/
-
-.select-section__heading:active .button--contacts,
-.select-section__heading:focus .button--contacts {
-  /*удалмть после подключения js*/
-  box-shadow: var(--box-shadow-primary-active);
-  background-color: var(--select-background-color-active);
-  border: 1px solid var(--select-border-color-active);
-}
-
-/* 
-Разкомментировать после подключения js
-.button--contacts:active,
-.button--contacts:focus {
-  box-shadow: var(--box-shadow-primary-active);
-  background-color: var(--select-background-color-active);
-  border: 1px solid var(--select-border-color-active);
-}
-*/
-
-.select-section__heading:active .button__arrow,
-.select-section__heading:focus .button__arrow {
-  /*удалмть после подключения js*/
-  background-color: var(--select-arrow-background-color-secondary-active);
-}
-
-/* 
-Разкомментировать после подключения js
-.button--contacts:active .button__arrow,
-.button--contacts:focus .button__arrow {
-  background-color: var(--select-arrow-background-color-secondary-active);
-}
-*/
+ */
 
 /* ------------------------footer------------------------ */
 
 .footer__container {
   position: relative;
 
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   display: flex;
   justify-content: space-between;
@@ -1112,7 +1061,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.25rem;
+  gap: 20px;
 }
 
 .social__item {
