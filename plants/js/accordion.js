@@ -88,7 +88,7 @@ class Collapse {
     this.animation = this.content.animate(
       {
         minHeight: [`${this.content.scrollHeight}px`, "0px"],
-        height: ["auto", "0px"],
+        height: [`${this.content.scrollHeight}px`, "0px"],
         overflow: ["visible", "hidden"],
       },
       config
