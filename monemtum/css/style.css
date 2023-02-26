@@ -31,12 +31,112 @@ body {
   padding: 20px;
 }
 
+.player {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 120px;
   margin-bottom: 28px;
+}
+
+.player-controls-advanced {
+  flex: 60%;
+  width: 100%;
+
+  padding-left: 10px;
+
+  /* display: flex; */
+  font-size: 1rem;
+}
+
+.current-title-sing {
+  text-align: left;
+}
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.player-time {
+  display: flex;
+}
+
+.timeline {
+  background: white;
+  width: 250px;
+  height: 6px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0 #0008;
+  z-index: 1;
+}
+
+.progress {
+  background: coral;
+  width: 0%;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.volume-container {
+  cursor: pointer;
+
+  position: relative;
+  z-index: 2;
+}
+
+.volume-container:hover .volume-slider {
+  left: -123px;
+  width: 120px;
+}
+
+.volume-slider {
+  position: absolute;
+  left: -3px;
+  top: 15px;
+  z-index: -1;
+  width: 0;
+  height: 15px;
+  background: white;
+  box-shadow: 0 0 20px #000a;
+  transition: 0.25s;
+}
+.volume-percentage {
+  background: coral;
+  height: 100%;
+  width: 75%;
+}
+
+.volume-button {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.volume {
+  transform: scale(0.7);
+}
+
+.icon-volumeMedium {
+  width: 26px;
+  height: 26px;
+  background-size: 26px;
+  background-image: url("../assets/svg/volume-button.svg");
+}
+
+.icon-volumeMute {
+  width: 26px;
+  height: 26px;
+  background-size: 26px;
+  background-image: url("../assets/svg/volume-button-mute.svg");
 }
 
 .play-list {
@@ -46,7 +146,7 @@ body {
 .play-item {
   position: relative;
   padding: 5px;
-  padding-left: 20px;
+  padding-left: 25px;
   list-style: none;
   opacity: 0.8;
   cursor: pointer;
@@ -57,16 +157,28 @@ body {
   opacity: 1;
 }
 
-.play-item::before {
-  content: "\2713";
+.play-item-icon {
   position: absolute;
+
   left: 0;
-  top: 2px;
-  font-weight: 900;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  background-size: 20px;
+  background-image: url("../assets/svg/play.svg");
+
+  cursor: pointer;
 }
 
-.item-active::before {
+.item-active {
   color: #c5b358;
+}
+
+.item-active .play-item-icon[data-item-icon="true"] {
+  background-image: url("../assets/svg/pause.svg");
 }
 
 .player-icon,
